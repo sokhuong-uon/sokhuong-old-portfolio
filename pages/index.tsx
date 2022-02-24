@@ -6,6 +6,10 @@ const Home: NextPage = () => {
 		<>
 			<Head>
 				<title>Sokhuong</title>
+				<meta
+					name="Description"
+					content="Web Dev: Frontend;WebGL 3D Three.js React Three Fiber"
+				/>
 			</Head>
 			<div className="flex items-center justify-center w-screen h-screen bg-black">
 				<h1 className="text-5xl text-white">Hi mom!</h1>
