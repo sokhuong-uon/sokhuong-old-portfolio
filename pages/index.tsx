@@ -11,8 +11,9 @@ const Home: NextPage = () => {
 					content="Web Dev: Frontend;WebGL 3D Three.js React Three Fiber"
 				/>
 			</Head>
-			<div className="flex items-center justify-center w-screen h-screen bg-black">
-				<h1 className="text-5xl text-white">Hi mom!</h1>
+			<div className="flex flex-col items-center justify-center w-screen h-screen gap-5 bg-black">
+				<h1 className="text-3xl text-white">Hi! I am Sokhuong.</h1>
+				<h1 className="text-3xl text-white">I do 3D web things</h1>
 			</div>
 		</>
 	)
