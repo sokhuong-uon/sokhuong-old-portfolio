@@ -11,11 +11,15 @@
   "dependencies": {
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "three": "^0.138.3"
   },
   "devDependencies": {
+    "@react-three/drei": "^8.16.4",
+    "@react-three/fiber": "^7.0.26",
     "@types/node": "17.0.19",
     "@types/react": "17.0.39",
+    "@types/three": "^0.138.0",
     "autoprefixer": "^10.4.2",
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
