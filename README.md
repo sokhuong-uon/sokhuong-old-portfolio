@@ -16,3 +16,5 @@ pnpm dev
  - Multi Views
  - Scroll Control
  - Interactive audio and Story Telling
+ - Painting art
+ - cat?
