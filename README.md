@@ -12,7 +12,7 @@ pnpm dev
  - Ray maching
  - shader noise
  - slide images shader
- - Doctor Strange portal
+ - Doctor Strange portal (will not use the spark particles, might replace with flowers...)
  - Multi Views
  - Scroll Control
  - Interactive audio and Story Telling
