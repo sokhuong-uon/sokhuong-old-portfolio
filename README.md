@@ -19,3 +19,4 @@ pnpm dev
  - Painting art
  - cat?
  - Honey Comb
+ + Something is just the part of Something else. screen of a computer for example.
