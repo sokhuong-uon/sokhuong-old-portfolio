@@ -5,3 +5,4 @@ node_modules/
 out/
 README.md
 package.json
+pnpm-lock.yaml
