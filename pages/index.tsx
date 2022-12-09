@@ -1,8 +1,21 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { Poppins } from '@next/font/google'
 
 import { ThreeDContent } from 'components/ThreeDContent'
 import { HtmlContent } from 'components/HtmlContent'
+
+const poppins = Poppins({
+	weight: [
+		'300', // font-light
+		'400', // font-normal
+		'500', // font-medium
+		'600', // font-semibold
+		'700' // font-bold
+	],
+	variable: '--font-poppins',
+	subsets: ['latin']
+})
 
 const Home: NextPage = () => {
 	return (
@@ -22,7 +35,7 @@ const Home: NextPage = () => {
 					backgroundColor: 'black',
 					position: 'relative'
 				}}
-				className="mobile-fit-height"
+				className={`${poppins.className} mobile-fit-height`}
 			>
 				{/* Contain Canvas Element */}
 				<figure id="3d-content" className="absolute inset-0 z-0 w-full h-full">
