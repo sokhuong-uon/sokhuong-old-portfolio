@@ -7,11 +7,11 @@ import { HtmlContent } from 'components/HtmlContent'
 
 const poppins = Poppins({
 	weight: [
-		'300', // font-light
-		'400', // font-normal
-		'500', // font-medium
-		'600', // font-semibold
-		'700' // font-bold
+		'300', // light
+		'400', // normal
+		'500', // medium
+		'600', // semibold
+		'700' // bold
 	],
 	variable: '--font-poppins',
 	subsets: ['latin']
