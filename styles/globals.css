@@ -6,7 +6,6 @@
 	@apply flex items-center justify-center;
 }
 
-.mobile-fit-height {
-	height: 100vh;
-	height: calc(var(--vh, 1vh) * 100);
+body {
+	background-color: black;
 }

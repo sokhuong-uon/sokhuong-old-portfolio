@@ -1,6 +1,6 @@
 const Page1 = () => {
 	return (
-		<div className="absolute inset-0 text-white select-none fcc">
+		<div className="w-full h-full text-white select-none fcc">
 			{/* Greeting  */}
 			<h3 className="font-semibold text-8xl">Hi</h3>
 
@@ -10,7 +10,7 @@ const Page1 = () => {
 			</p>
 
 			{/* Scroll down arrow  */}
-			<p className="absolute inset-x-auto bottom-12 opacity-60">
+			<p className="absolute inset-x-auto bottom-16 opacity-60">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="16"
