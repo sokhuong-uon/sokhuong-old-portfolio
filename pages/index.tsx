@@ -19,10 +19,10 @@ const Home: NextPage = () => {
 				id="container"
 				style={{
 					width: '100vw',
-					height: '100vh',
 					backgroundColor: 'black',
 					position: 'relative'
 				}}
+				className="mobile-fit-height"
 			>
 				{/* Contain Canvas Element */}
 				<figure id="3d-content" className="absolute inset-0 z-0 w-full h-full">
