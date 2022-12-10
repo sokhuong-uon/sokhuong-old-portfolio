@@ -13,6 +13,9 @@ const Page3 = () => {
 					<div className="relative w-full h-full">
 						<div className="w-11/12 h-px mx-auto -translate-y-16 bg-white"></div>
 						<div className="w-11/12 h-px mx-auto -translate-y-2 bg-white"></div>
+
+						<div className="w-px h-48 mx-auto -translate-y-20 bg-white -translate-x-36"></div>
+						<div className="w-px h-72 mx-auto translate-x-36 -translate-y-[26rem] bg-white"></div>
 					</div>
 				</section>
 			</div>
