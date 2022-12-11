@@ -30,6 +30,8 @@ const Line: React.FC<LineProps> = ({ points, width, color }) => {
 
 export const SelfIntroduction = () => {
 	const group = useRef<THREE.Group>(null!)
+	const lineGroup = useRef<THREE.Group>(null!)
+
 	const textI = useRef<THREE.Group>(null!)
 	const sokhuong = useRef<THREE.Group>(null!)
 	const scroll = useScroll()
@@ -41,9 +43,12 @@ export const SelfIntroduction = () => {
 		const secondPageRange = scroll.range(1 / 10, 1 / 10)
 
 		group.current.position.y = firstPageRange * 5 - 4
+		lineGroup.current.position.y = firstPageRange * 5 - 4
 		if (firstPageRange > 0.4) {
 			sokhuong.current.position.x =
 				-firstPageRange * 5 + 6 - secondPageRange * 5
+
+			lineGroup.current.position.x = -firstPageRange * 5 + 6 - secondPageRange
 		}
 	})
 
@@ -96,15 +101,17 @@ export const SelfIntroduction = () => {
 			</Text>
 
 			{/* Lines */}
-			<mesh scale={[1, 0.1, 1]} position={[0, -1.2, 0]}>
-				<planeGeometry args={[4, 0.2]} />
-			</mesh>
-			<mesh scale={[1, 0.1, 1]} position={[0, -1.1, 0]}>
-				<planeGeometry args={[4, 0.2]} />
-			</mesh>
-			<mesh scale={[1, 0.1, 1]} position={[0, -1, 0]}>
-				<planeGeometry args={[4, 0.2]} />
-			</mesh>
+			<group ref={lineGroup}>
+				<mesh scale={[1, 0.1, 1]} position={[0, -1.2, 0]}>
+					<planeGeometry args={[4, 0.2]} />
+				</mesh>
+				<mesh scale={[1, 0.1, 1]} position={[0, -1.1, 0]}>
+					<planeGeometry args={[4, 0.2]} />
+				</mesh>
+				<mesh scale={[1, 0.1, 1]} position={[0, -1, 0]}>
+					<planeGeometry args={[4, 0.2]} />
+				</mesh>
+			</group>
 		</>
 	)
 }

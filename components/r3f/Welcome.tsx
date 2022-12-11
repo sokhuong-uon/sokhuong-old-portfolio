@@ -4,6 +4,7 @@ import { useRef } from 'react'
 
 export const Welcome = () => {
 	const text = useRef<THREE.Object3D>(null!)
+	const html = useRef<HTMLDivElement>(null!)
 	const scroll = useScroll()
 
 	useFrame(() => {
@@ -15,6 +16,13 @@ export const Welcome = () => {
 			10 + firstPageRange * 20,
 			10 + firstPageRange * 20
 		)
+		if (html.current) {
+			html.current.style.opacity = Math.max(
+				0,
+				1 - firstPageRange * 8
+			).toString()
+			console.log(html.current.style.opacity)
+		}
 	})
 
 	return (
@@ -25,7 +33,12 @@ export const Welcome = () => {
 			</Text>
 
 			{/* Scroll Down Instruction */}
-			<Html position={[0, -2.5, 0]} center className="flex-col text-white fcc">
+			<Html
+				ref={html}
+				position={[0, -2.5, 0]}
+				center
+				className="flex-col text-white fcc"
+			>
 				<p className="w-32 mb-6 text-sm font-semibold tracking-wider text-center opacity-60">
 					Scroll down
 				</p>
