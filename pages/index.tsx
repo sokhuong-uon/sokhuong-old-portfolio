@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 
 			<div
 				id="container"
-				className={`${poppins.className} relative w-screen h-screen`}
+				className={`${poppins.className} relative w-screen h-screen overflow-hidden`}
 			>
 				{/* Contain Canvas Element */}
 				<figure id="3d-content" className="absolute inset-0 z-0 w-full h-full">
