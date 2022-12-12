@@ -1,55 +1,43 @@
 import { Text, useScroll } from '@react-three/drei'
-import { useFrame, useThree, extend } from '@react-three/fiber'
-import React, { useRef } from 'react'
-import { MeshLineGeometry, MeshLineMaterial, raycast } from 'meshline'
-import { Object3DNode, MaterialNode } from '@react-three/fiber'
-
-extend({ MeshLineGeometry, MeshLineMaterial })
-
-type LineProps = {
-	points: number[]
-	width: number
-	color: string
-}
-
-const Line: React.FC<LineProps> = ({ points, width, color }) => {
-	return (
-		<mesh raycast={raycast} rotation-z={Math.PI / 2} position={[-0, -2, 0]}>
-			<meshLineGeometry points={points} />
-			<meshLineMaterial
-				transparent
-				depthTest={false}
-				lineWidth={width}
-				color={color}
-				dashArray={0.08}
-				dashRatio={0.95}
-			/>
-		</mesh>
-	)
-}
+import { useFrame } from '@react-three/fiber'
+import { useRef } from 'react'
+import { IntroductionLines } from './IntroductionLines'
 
 export const SelfIntroduction = () => {
 	const group = useRef<THREE.Group>(null!)
-	const lineGroup = useRef<THREE.Group>(null!)
 
 	const textI = useRef<THREE.Group>(null!)
+	const textA = useRef<THREE.Group>(null!)
+	const textM = useRef<THREE.Group>(null!)
+
 	const sokhuong = useRef<THREE.Group>(null!)
 	const scroll = useScroll()
-
-	const viewport = useThree(state => state.viewport)
 
 	useFrame(() => {
 		const firstPageRange = scroll.range(0, 1 / 10)
 		const secondPageRange = scroll.range(1 / 10, 1 / 10)
+		const thirdPageRange = scroll.range(2 / 10, 1 / 10)
 
 		group.current.position.y = firstPageRange * 5 - 4
-		lineGroup.current.position.y = firstPageRange * 5 - 4
-		if (firstPageRange > 0.4) {
-			sokhuong.current.position.x =
-				-firstPageRange * 5 + 6 - secondPageRange * 5
+		sokhuong.current.position.x =
+			-firstPageRange * 10 + 10 - secondPageRange * 10
 
-			lineGroup.current.position.x = -firstPageRange * 5 + 6 - secondPageRange
-		}
+		// I AM text
+		textI.current.position.x = Math.min(-0.09, -secondPageRange * 1.5)
+		textM.current.position.x = Math.max(0.08, secondPageRange * 1.5)
+
+		// @ts-ignore
+		textM.current.strokeOpacity = 1 - secondPageRange * 5
+		// @ts-ignore
+		textI.current.strokeOpacity = 1 - secondPageRange * 5
+
+		const textAScale = 1 + thirdPageRange * 10
+
+		textA.current.scale.set(textAScale, textAScale, textAScale)
+		// @ts-ignore
+		textA.current.strokeOpacity = 1 - thirdPageRange * 2.5
+		// @ts-ignore
+		textA.current.strokeWidth = 0.001 - thirdPageRange * 0.001
 	})
 
 	return (
@@ -61,7 +49,7 @@ export const SelfIntroduction = () => {
 					font="/Poppins/Poppins-SemiBold.ttf"
 					fillOpacity={0}
 					strokeColor={'white'}
-					strokeWidth={'2.5%'}
+					strokeWidth={0.001}
 					strokeOpacity={1}
 					position={[-0.09, 0, 0]}
 				>
@@ -69,20 +57,22 @@ export const SelfIntroduction = () => {
 				</Text>
 
 				<Text
+					ref={textA}
 					font="/Poppins/Poppins-SemiBold.ttf"
 					fillOpacity={0}
 					strokeColor={'white'}
-					strokeWidth={'2.5%'}
+					strokeWidth={0.001}
 					strokeOpacity={1}
 				>
 					A
 				</Text>
 
 				<Text
+					ref={textM}
 					font="/Poppins/Poppins-SemiBold.ttf"
 					fillOpacity={0}
 					strokeColor={'white'}
-					strokeWidth={'2.5%'}
+					strokeWidth={0.001}
 					strokeOpacity={1}
 					position={[0.08, 0, 0]}
 				>
@@ -94,31 +84,14 @@ export const SelfIntroduction = () => {
 			<Text
 				ref={sokhuong}
 				font="/Poppins/Poppins-SemiBold.ttf"
-				position={[5, 0, 0]}
+				// position={[5, 0, 0]}
 				scale={6}
 			>
 				SOKHUONG
 			</Text>
 
 			{/* Lines */}
-			<group ref={lineGroup}>
-				<mesh scale={[1, 0.1, 1]} position={[0, -1.2, 0]}>
-					<planeGeometry args={[4, 0.2]} />
-				</mesh>
-				<mesh scale={[1, 0.1, 1]} position={[0, -1.1, 0]}>
-					<planeGeometry args={[4, 0.2]} />
-				</mesh>
-				<mesh scale={[1, 0.1, 1]} position={[0, -1, 0]}>
-					<planeGeometry args={[4, 0.2]} />
-				</mesh>
-			</group>
+			<IntroductionLines />
 		</>
 	)
-}
-
-declare module '@react-three/fiber' {
-	interface ThreeElements {
-		meshLineGeometry: Object3DNode<MeshLineGeometry, typeof MeshLineGeometry>
-		meshLineMaterial: MaterialNode<MeshLineMaterial, typeof MeshLineMaterial>
-	}
 }

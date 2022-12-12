@@ -21,7 +21,6 @@ export const Welcome = () => {
 				0,
 				1 - firstPageRange * 8
 			).toString()
-			console.log(html.current.style.opacity)
 		}
 	})
 
