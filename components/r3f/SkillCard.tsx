@@ -2,12 +2,20 @@ import * as THREE from 'three'
 import { useMemo, useRef } from 'react'
 import { useScroll } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { useApplicationStore } from 'store'
+import { a, useSpring } from '@react-spring/three'
 
 export const SkillCard = () => {
+	const state = useApplicationStore()
+
 	const geometry = useMemo(() => {
 		const geometry = new THREE.PlaneGeometry(2, 3)
 		return geometry
 	}, [])
+
+	const { opacity } = useSpring({
+		opacity: state.experienceDetialVisible ? 0 : 1
+	})
 
 	const group = useRef<THREE.Group>(null!)
 
@@ -46,24 +54,45 @@ export const SkillCard = () => {
 
 	return (
 		<group ref={group}>
-			<mesh geometry={geometry}>
-				<meshBasicMaterial color={'white'} />
+			<mesh
+				geometry={geometry}
+				onClick={() => state.trueUpExperienceDetailVisibility()}
+			>
+				{/* 
+					//@ts-ignore */}
+				<a.meshBasicMaterial color={'white'} transparent opacity={opacity} />
 			</mesh>
 
-			<mesh geometry={geometry} position={[2.5, -0.5, 0]}>
-				<meshBasicMaterial color={'white'} />
+			<mesh
+				geometry={geometry}
+				position={[2.5, -0.5, 0]}
+				onClick={() => state.trueUpExperienceDetailVisibility()}
+			>
+				<a.meshBasicMaterial color={'white'} transparent opacity={opacity} />
 			</mesh>
 
-			<mesh geometry={geometry} position={[5, -1, 0]}>
-				<meshBasicMaterial color={'white'} />
+			<mesh
+				geometry={geometry}
+				position={[5, -1, 0]}
+				onClick={() => state.trueUpExperienceDetailVisibility()}
+			>
+				<a.meshBasicMaterial color={'white'} transparent opacity={opacity} />
 			</mesh>
 
-			<mesh geometry={geometry} position={[7.5, -1.5, 0]}>
-				<meshBasicMaterial color={'white'} />
+			<mesh
+				geometry={geometry}
+				position={[7.5, -1.5, 0]}
+				onClick={() => state.trueUpExperienceDetailVisibility()}
+			>
+				<a.meshBasicMaterial color={'white'} transparent opacity={opacity} />
 			</mesh>
 
-			<mesh geometry={geometry} position={[10, -2, 0]}>
-				<meshBasicMaterial color={'white'} />
+			<mesh
+				geometry={geometry}
+				position={[10, -2, 0]}
+				onClick={() => state.trueUpExperienceDetailVisibility()}
+			>
+				<a.meshBasicMaterial color={'white'} transparent opacity={opacity} />
 			</mesh>
 		</group>
 	)

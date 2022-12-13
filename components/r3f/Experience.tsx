@@ -1,11 +1,24 @@
 import { Text, useScroll } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
+import { useApplicationStore } from 'store'
 import { SkillCard } from './SkillCard'
+import { a, useSpring } from '@react-spring/three'
 
 export const Experience = () => {
 	const group = useRef<THREE.Group>(null!)
 	const experience = useRef<THREE.Group>(null!)
+
+	const state = useApplicationStore()
+	const { opacity } = useSpring({
+		opacity: state.experienceDetialVisible ? 0 : 1,
+		config: { duration: 500 },
+		onChange: v => {
+			console.log(v)
+			// @ts-ignore
+			experience.current.strokeOpacity = v.value.opacity
+		}
+	})
 
 	const scroll = useScroll()
 
