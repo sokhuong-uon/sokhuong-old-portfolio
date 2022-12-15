@@ -8,27 +8,30 @@ export const IntroductionSection: React.FC<IntroductionSectionProps> = ({
 	threeDIntroductionRef
 }) => {
 	return (
-		<div className="w-full h-full text-white">
+		<div className="relative flex-col w-full h-full text-white fcc md:flex-row">
 			{/* View Track */}
-			<div ref={threeDIntroductionRef} className="w-full h-1/2"></div>
+			<div
+				ref={threeDIntroductionRef}
+				className="w-full h-1/2 md:h-full md:w-1/2"
+			></div>
 
 			{/* HTML */}
-			<div className="flex flex-col justify-between w-full pb-6 h-1/2">
+			<div className="relative flex justify-between w-full pb-6 sm:items-center md:h-full md:w-1/2 h-1/2">
 				{/* Introduction */}
 				<div className="flex flex-col items-center w-full">
-					<p className="px-3 mb-2 font-semibold opacity-50 w-80">
+					<p className="px-3 mb-2 font-semibold opacity-50 sm:text-2xl w-80 sm:w-full">
 						I AM SOKHUONG
 					</p>
-					<p className="text-4xl font-semibold tracking-wide text-center w-80">
+					<p className="text-4xl font-semibold tracking-wide text-center sm:px-3 sm:text-start sm:text-5xl w-80 sm:w-full">
 						WEB DEVELOPER
 					</p>
-					<p className="px-3 py-2 font-light tracking-wide opacity-70 w-80 ">
+					<p className="px-3 py-2 font-light tracking-wide opacity-70 w-80 sm:w-full ">
 						Make Immersive 3D Experience & Responsive UI
 					</p>
 				</div>
 
 				{/* Scroll down */}
-				<div className="absolute flex flex-col items-center w-full opacity-50 bottom-12">
+				<div className="absolute flex flex-col items-center justify-center w-full opacity-50 sm:hidden bottom-12">
 					<p className="w-32 mb-2 text-sm tracking-wider text-center opacity-60">
 						Scroll down
 					</p>

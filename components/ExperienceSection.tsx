@@ -26,7 +26,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
 		<div className="relative items-center w-full h-full fcc">
 			<div
 				ref={experienceTrack}
-				className="absolute w-full h-full border pointer-events-auto touch-none touch-pan-y"
+				className="absolute w-full h-full pointer-events-auto touch-none touch-pan-y"
 			></div>
 
 			<ExperienceDetail

@@ -27,7 +27,7 @@ export const ThreeJSExperience: React.FC<ExperienceViewProps> = ({
 	const { animatingPlaneScale } = useSpring({
 		animatingPlaneScale:
 			state.viewingExperience === 'threejs' && state.experienceDetialVisible
-				? ([3, 3, 3] as ReactThreeFiber.Vector3)
+				? ([5, 3, 5] as ReactThreeFiber.Vector3)
 				: ([1, 1, 1] as ReactThreeFiber.Vector3)
 	})
 
