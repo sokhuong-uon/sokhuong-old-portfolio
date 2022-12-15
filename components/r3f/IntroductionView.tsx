@@ -18,14 +18,14 @@ export const IntroductionView: React.FC<IntroductionViewProps> = ({
 }) => {
 	const sizes = React.useMemo(() => {
 		return new Float32Array(
-			Array.from({ length: 20 }, () => Math.random() * 20)
+			Array.from({ length: 25 }, () => Math.random() * 20)
 		)
 	}, [])
 	return (
 		<View track={introductionTrack}>
 			<Center>
+				<Sparkles count={25} color="orange" scale={4} size={sizes}></Sparkles>
 				<Float floatIntensity={2} speed={2}>
-					<Sparkles count={20} color="orange" scale={4} size={sizes}></Sparkles>
 					<Text3D
 						position={[-1, -0.5, 0]}
 						bevelEnabled
