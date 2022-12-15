@@ -1,23 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Poppins } from '@next/font/google'
-
-import { Page1 } from 'components/Page1'
-import { Page2 } from 'components/Page2'
-import { Page3 } from 'components/Page3'
-import { Page4 } from 'components/Page4'
-
-const poppins = Poppins({
-	weight: [
-		'300', // light
-		'400', // normal
-		'500', // medium
-		'600', // semibold
-		'700' // bold
-	],
-	variable: '--font-poppins',
-	subsets: ['latin']
-})
 
 const Design: NextPage = () => {
 	return (
@@ -27,23 +9,13 @@ const Design: NextPage = () => {
 				<meta name="Description" content="Web Developer. Design with Figma" />
 			</Head>
 
-			<div
-				id="container"
-				className={`${poppins.className} relative w-screen h-screen`}
-			>
-				{/* Contain HTML Overlay */}
-				<main
-					id="html-content"
-					className="absolute inset-0 z-10 w-full h-full pointer-events-none touch-none"
-				>
-					<div className="relative w-full h-full">
-						<Page1 />
-						<Page2 />
-						<Page3 />
-						<Page4 />
-					</div>
-				</main>
-			</div>
+			<main className="relative w-screen h-screen">
+				<iframe
+					src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTfiRagjhd1GX3DH2kivVtB%2FPortfolio%3Fnode-id%3D0%253A1%26t%3DYATiV6PZ8F5B4Ljd-1"
+					className="w-full h-full border border-opacity-10"
+					allowFullScreen
+				></iframe>
+			</main>
 		</>
 	)
 }
