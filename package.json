@@ -19,6 +19,7 @@
     "@theatre/core": "0.5",
     "@theatre/r3f": "0.5",
     "@theatre/studio": "0.5",
+    "@use-gesture/react": "^10.2.23",
     "next": "^13.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

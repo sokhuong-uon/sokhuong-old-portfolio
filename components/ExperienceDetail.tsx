@@ -1,9 +1,18 @@
-import { Carousel } from './Carousel'
-import { useApplicationStore } from 'store'
-import { a } from '@react-spring/web'
 import { useSpring } from '@react-spring/three'
+import { a } from '@react-spring/web'
+import {
+	ExperienceDetail as ExperienceDetailPropsType,
+	useApplicationStore
+} from 'store'
+import { Carousel } from './Carousel'
 
-export const ExperienceDetail = () => {
+export type ExperienceDetailProps = ExperienceDetailPropsType
+
+export const ExperienceDetail: React.FC<ExperienceDetailProps> = ({
+	illustration,
+	skill,
+	description
+}) => {
 	const state = useApplicationStore()
 
 	const { opacity } = useSpring({
@@ -19,7 +28,7 @@ export const ExperienceDetail = () => {
 				pointerEvents: state.experienceDetialVisible ? 'auto' : 'none',
 				opacity: opacity
 			}}
-			className="w-full h-full p-6 text-white"
+			className="w-full h-full max-w-lg p-6 text-white"
 		>
 			<div className="relative w-full h-2/5">
 				<button
@@ -33,7 +42,7 @@ export const ExperienceDetail = () => {
 						fill="none"
 					>
 						<path
-							stroke="#A0A0A0"
+							stroke="currentColor"
 							strokeLinecap="round"
 							strokeWidth="2"
 							d="M25 25 1 1m24 0L1 25"
@@ -44,13 +53,11 @@ export const ExperienceDetail = () => {
 
 			{/* Description */}
 			<div className="w-full h-3/5">
-				<h3 className="font-semibold opacity-70">CREATE IMMERSIVE</h3>
+				<h3 className="font-semibold opacity-70">{illustration}</h3>
 
-				<h2 className="text-4xl font-semibold">3D EXPERIENCE</h2>
+				<h2 className="text-4xl font-semibold">{skill}</h2>
 
-				<h3 className="text-sm font-light opacity-80">
-					For High Performance Visualization & 3D Environment.
-				</h3>
+				<h3 className="text-sm font-light opacity-80">{description}</h3>
 
 				{/* Carousel */}
 				<Carousel />

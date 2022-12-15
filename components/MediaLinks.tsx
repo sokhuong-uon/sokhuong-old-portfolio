@@ -4,7 +4,10 @@ export const MediaLinks = () => {
 			<section className="absolute w-full h-56 text-white pointer-events-none touch-none bottom-16">
 				<div className="relative flex flex-col items-center justify-center w-full h-full">
 					{/* Twitter */}
-					<div className="relative flex items-center justify-center my-2 border rounded-full w-52 h-9">
+					<a
+						href="https://twitter.com/SOKHUONG3"
+						className="relative flex items-center justify-center my-2 border rounded-full shadow pointer-events-auto shadow-gray-300 w-52 h-9"
+					>
 						<figure className="absolute left-4">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -34,10 +37,13 @@ export const MediaLinks = () => {
 								/>
 							</svg>
 						</figure>
-					</div>
+					</a>
 
 					{/* Github */}
-					<div className="relative flex items-center justify-center my-2 border rounded-full w-52 h-9">
+					<a
+						href="https://github.com/sokhuong-uon"
+						className="relative flex items-center justify-center my-2 border rounded-full shadow pointer-events-auto shadow-gray-300 w-52 h-9"
+					>
 						<figure className="absolute left-4">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -67,10 +73,13 @@ export const MediaLinks = () => {
 								/>
 							</svg>
 						</figure>
-					</div>
+					</a>
 
 					{/* Resume */}
-					<div className="relative flex items-center justify-center my-2 border rounded-full w-52 h-9">
+					<a
+						href="/SOKHUONG-Resume.pdf"
+						className="relative flex items-center justify-center my-2 border rounded-full shadow pointer-events-auto shadow-gray-300 w-52 h-9"
+					>
 						<figure className="absolute left-4">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -93,6 +102,7 @@ export const MediaLinks = () => {
 								width="18"
 								height="8"
 								fill="none"
+								className="rotate-90"
 							>
 								<path
 									fill="#fff"
@@ -100,7 +110,7 @@ export const MediaLinks = () => {
 								/>
 							</svg>
 						</figure>
-					</div>
+					</a>
 				</div>
 			</section>
 		</>

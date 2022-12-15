@@ -6,3 +6,4 @@ out/
 README.md
 package.json
 pnpm-lock.yaml
+public/font.json
