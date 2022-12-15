@@ -15,3 +15,4 @@ pnpm dev
 ```
 ## Design file
 [Figma](https://www.figma.com/file/TfiRagjhd1GX3DH2kivVtB/Portfolio?node-id=0%3A1&t=gglUlq3OYRqLuLde-1)
+[Embeded](https://sokhuong.vercel.app/design)
