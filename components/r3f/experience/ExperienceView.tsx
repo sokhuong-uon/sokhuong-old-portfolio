@@ -23,6 +23,8 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
 	useLayoutEffect(() => {
 		if (size.width >= 1024) trueUpExperienceDetailVisibility()
 		else falsifyExperienceDetailVisibility()
+
+		console.log('layout effect')
 	}, [
 		size,
 		trueUpExperienceDetailVisibility,

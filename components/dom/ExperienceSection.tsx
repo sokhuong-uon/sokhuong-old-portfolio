@@ -1,6 +1,7 @@
-import { a, useSpring } from '@react-spring/web'
+import { useSpring } from '@react-spring/web'
 import React from 'react'
 import { useApplicationStore } from 'store'
+import { CarouselSelectionButtons } from '@dom/button'
 import { ExperienceDetail } from './ExperienceDetail'
 
 export type ExperienceSectionProps = {
@@ -23,8 +24,22 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
 	})
 
 	return (
-		<div className="relative items-center w-full h-full overflow-hidden fcc">
-			<div className="relative z-10 w-full h-full lg:w-1/2">
+		<div className="relative items-center w-full h-full fcc">
+			<div
+				id="ex-track"
+				ref={experienceTrack}
+				className={
+					'absolute inset-0 w-full h-full pointer-events-auto' +
+					`${experienceDetialVisible === true ? ' z-0' : ' z-20'}`
+				}
+			></div>
+
+			<div
+				className={
+					'relative w-full h-full lg:w-1/2' +
+					`${experienceDetialVisible === true ? ' z-20' : ' z-0'}`
+				}
+			>
 				<ExperienceDetail
 					description={experiences[viewingExperience].description}
 					skill={experiences[viewingExperience].skill}
@@ -32,22 +47,18 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
 				/>
 			</div>
 
-			<div className="absolute w-full h-full pointer-events-none lg:relative">
-				<div className="relative w-full h-full fcc">
-					<div className="absolute z-0 w-1/2 h-3 gap-2 bottom-[10.5rem] fcc">
-						<button className="w-5 transition-transform bg-white border rounded-full pointer-events-auto peer hover:scale-125 aspect-square"></button>
-						<button className="w-5 transition-transform border rounded-full pointer-events-auto hover:scale-125 aspect-square"></button>
-						<button className="w-5 transition-transform border rounded-full pointer-events-auto hover:scale-125 aspect-square"></button>
-						<button className="w-5 transition-transform border rounded-full pointer-events-auto hover:scale-125 aspect-square"></button>
-						<button className="w-5 transition-transform border rounded-full pointer-events-auto hover:scale-125 aspect-square"></button>
+			<div
+				className={
+					'absolute w-full h-full pointer-events-none lg:relative' +
+					`${experienceDetialVisible === true ? ' z-10' : ' z-0'}`
+				}
+			>
+				<div className="relative flex flex-col justify-end w-full h-full">
+					<div className="w-full fcc h-1/2">
+						<CarouselSelectionButtons />
 					</div>
 				</div>
 			</div>
-
-			<div
-				ref={experienceTrack}
-				className="absolute w-full h-full pointer-events-auto touch-none touch-pan-y"
-			></div>
 		</div>
 	)
 }

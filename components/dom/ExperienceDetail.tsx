@@ -33,7 +33,7 @@ export const ExperienceDetail: React.FC<ExperienceDetailProps> = ({
 			className="w-full h-full text-white"
 		>
 			{/* X Button */}
-			<div className="relative w-full border lg:hidden h-2/5">
+			<div className="relative w-full pointer-events-auto lg:hidden h-2/5">
 				<XButton />
 			</div>
 
@@ -53,8 +53,8 @@ export const ExperienceDetail: React.FC<ExperienceDetailProps> = ({
 					{/* Carousel */}
 					<Carousel />
 
-					<div className="absolute top-auto w-16 h-64 bg-black sm:hidden xl:left-5 -left-8 blur-md"></div>
-					<div className="absolute top-auto w-16 h-64 bg-black sm:hidden xl:right-5 -right-8 blur-md"></div>
+					<div className="absolute top-auto hidden w-16 h-64 bg-black md:visible xl:left-5 -left-8 blur-md"></div>
+					<div className="absolute top-auto hidden w-16 h-64 bg-black md:visible xl:right-5 -right-8 blur-md"></div>
 
 					{/* Link */}
 					<div className="relative w-full h-12 px-3 overflow-hidden rounded-full pointer-events-auto fcc xl:px-20">

@@ -49,7 +49,7 @@ const Home: NextPage = () => {
 				{/* Contain HTML Overlay */}
 				<div
 					id="html-content"
-					className="absolute inset-0 z-10 w-full h-full pointer-events-none touch-none"
+					className="absolute inset-0 z-10 w-full h-full pointer-events-none"
 				>
 					<HtmlContent
 						experienceTrack={experienceRef}

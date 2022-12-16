@@ -1,7 +1,7 @@
 export const ProjectDetailButton = () => {
 	return (
 		<a
-			href="https://v2.tailwindcss.com/docs/responsive-design"
+			href="https://sokhuong.vercel.app/design"
 			className="relative w-full h-full border rounded-full border-slate-700 fcc"
 		>
 			<p className="absolute text-2xl left-6">VISIT</p>

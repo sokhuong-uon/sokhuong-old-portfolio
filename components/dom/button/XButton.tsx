@@ -1,13 +1,12 @@
 import { useApplicationStore } from 'store'
 
 export const XButton = () => {
-	const state = useApplicationStore()
+	const falsifyExperienceDetailVisibility = useApplicationStore(
+		state => state.falsifyExperienceDetailVisibility
+	)
 
 	return (
-		<button
-			onClick={() => state.falsifyExperienceDetailVisibility()}
-			className="pointer-events-auto"
-		>
+		<button onClick={() => falsifyExperienceDetailVisibility()} className="">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="26"
