@@ -1,17 +1,17 @@
-import { ContactSectionProps } from 'components/ContactSection'
-import { IntroductionSectionProps } from 'components/IntroductionSection'
+import { ContactSectionProps } from '@dom/ContactSection'
+import { IntroductionSectionProps } from '@dom/IntroductionSection'
+import { ContactView } from '@r3f/contact'
+import { ExperienceView } from '@r3f/experience'
+import { IntroductionView } from '@r3f/introduction'
 import React from 'react'
-import { ContactView } from './ContactView'
-import { ExperienceView } from './ExperienceView'
-import { IntroductionView } from './IntroductionView'
 
-export type ExperienceCardViewsProps = {
+export type CanvasViewsProps = {
 	experienceTrack: React.MutableRefObject<HTMLDivElement>
 	introductionTrack: IntroductionSectionProps['threeDIntroductionRef']
 	contactTrack: ContactSectionProps['contactRef']
 }
 
-export const ExperienceCardViews: React.FC<ExperienceCardViewsProps> = ({
+export const CanvasViews: React.FC<CanvasViewsProps> = ({
 	experienceTrack,
 	introductionTrack,
 	contactTrack

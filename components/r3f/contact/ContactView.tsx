@@ -1,4 +1,4 @@
-import { Html, useScroll, useTexture, View } from '@react-three/drei'
+import { useTexture, View } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import React, { useRef } from 'react'
 

@@ -1,7 +1,7 @@
 import { Poppins } from '@next/font/google'
-import { HtmlContent } from 'components/HtmlContent'
-import { Meta } from 'components/Meta'
-import { ThreeDContent } from 'components/ThreeDContent'
+import { HtmlContent } from '@dom'
+import { Meta } from '@components/Meta'
+import { ThreeDContent } from '@r3f'
 import type { NextPage } from 'next'
 import { useRef } from 'react'
 
