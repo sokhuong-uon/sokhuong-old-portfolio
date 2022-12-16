@@ -10,24 +10,31 @@ export const IntroductionSection: React.FC<IntroductionSectionProps> = ({
 	return (
 		<div className="relative flex-col w-full h-full text-white fcc md:flex-row">
 			{/* View Track */}
-			<div
-				ref={threeDIntroductionRef}
-				className="w-full h-1/2 md:h-full md:w-1/2"
-			></div>
+			<div className="relative w-full h-1/2 md:h-full md:w-1/2">
+				<div
+					className="w-full h-[36rem] md:h-full md:w-[36rem] lg:w-full"
+					ref={threeDIntroductionRef}
+				></div>
+			</div>
 
 			{/* HTML */}
 			<div className="relative flex justify-between w-full pb-6 sm:items-center md:h-full md:w-1/2 h-1/2">
 				{/* Introduction */}
-				<div className="flex flex-col items-center w-full">
-					<p className="px-3 mb-2 font-semibold opacity-50 sm:text-2xl w-80 sm:w-full">
-						I AM SOKHUONG
-					</p>
-					<p className="text-4xl font-semibold tracking-wide text-center sm:px-3 sm:text-start sm:text-5xl w-80 sm:w-full">
-						WEB DEVELOPER
-					</p>
-					<p className="px-3 py-2 font-light tracking-wide opacity-70 w-80 sm:w-full ">
-						Make Immersive 3D Experience & Responsive UI
-					</p>
+				<div className="relative flex justify-center w-full ">
+					{/* pink */}
+					<div className="relative flex flex-col justify-start h-fit text-start sm:w-7/12 sm:px-3 sm:text-start sm:text-5xl w-80 md:w-full">
+						<p className="w-full text-xl font-semibold opacity-50 md:text-2xl">
+							I AM SOKHUONG
+						</p>
+
+						<p className="text-4xl font-semibold tracking-wide md:text-6xl">
+							WEB DEVELOPER
+						</p>
+
+						<p className="w-full py-2 text-sm font-light tracking-wide opacity-70">
+							Make Immersive 3D Experience & Responsive UI
+						</p>
+					</div>
 				</div>
 
 				{/* Scroll down */}
