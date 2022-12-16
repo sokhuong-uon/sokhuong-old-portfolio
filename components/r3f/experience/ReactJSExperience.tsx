@@ -5,7 +5,7 @@ import { useDrag } from '@use-gesture/react'
 import { useRef } from 'react'
 import { useApplicationStore } from 'store'
 import { MathUtils } from 'three'
-import { ExperienceViewProps } from '../ExperienceView'
+import { ExperienceViewProps } from './ExperienceView'
 
 export const ReactJSExperience: React.FC<ExperienceViewProps> = ({
 	experienceTrack

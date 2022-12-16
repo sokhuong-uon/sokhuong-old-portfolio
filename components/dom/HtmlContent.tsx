@@ -25,10 +25,7 @@ export const HtmlContent: React.FC<HtmlContentProps> = ({
 			</div>
 
 			{/* Experience Section */}
-			<div
-				id="experience-container"
-				className="flex w-full h-full overflow-x-scroll snap-center"
-			>
+			<div id="experience-container" className="w-full h-full snap-center">
 				<ExperienceSection experienceTrack={experienceTrack} />
 			</div>
 

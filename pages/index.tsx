@@ -1,7 +1,7 @@
 import { Poppins } from '@next/font/google'
-import { HtmlContent } from 'components/HtmlContent'
-import { Meta } from 'components/Meta'
-import { ThreeDContent } from 'components/ThreeDContent'
+import { HtmlContent } from '@dom'
+import { Meta } from '@components/Meta'
+import { ThreeDContent } from '@r3f'
 import type { NextPage } from 'next'
 import { useRef } from 'react'
 
@@ -49,7 +49,7 @@ const Home: NextPage = () => {
 				{/* Contain HTML Overlay */}
 				<div
 					id="html-content"
-					className="absolute inset-0 z-10 w-full h-full pointer-events-none touch-none"
+					className="absolute inset-0 z-10 w-full h-full pointer-events-none"
 				>
 					<HtmlContent
 						experienceTrack={experienceRef}
