@@ -47,13 +47,8 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
 				/>
 			</div>
 
-			<div
-				className={
-					'absolute w-full h-full pointer-events-none lg:relative' +
-					`${experienceDetialVisible === true ? ' z-10' : ' z-0'}`
-				}
-			>
-				<div className="relative flex flex-col justify-end w-full h-full">
+			<div className={'absolute w-full h-full pointer-events-none lg:relative'}>
+				<div className="relative z-30 flex flex-col justify-end w-full h-full">
 					<div className="w-full fcc h-1/2">
 						<CarouselSelectionButtons />
 					</div>

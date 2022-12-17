@@ -1,8 +1,15 @@
-import { ThreeJSExperience } from '@r3f/experience'
+import { Card } from '@r3f/experience/Card'
+import {
+	Animation,
+	Backend,
+	ListGroup,
+	Modeling,
+	ReactJS,
+	ThreeJS
+} from '@r3f/experience/list'
+import { ResponsiveGroup } from '@r3f/experience/ResponsiveGroup'
 import { PerspectiveCamera, View } from '@react-three/drei'
-import { useThree } from '@react-three/fiber'
-import React, { useLayoutEffect } from 'react'
-import { useApplicationStore } from 'store'
+import React from 'react'
 
 export type ExperienceViewProps = {
 	experienceTrack: React.MutableRefObject<HTMLDivElement>
@@ -11,33 +18,21 @@ export type ExperienceViewProps = {
 export const ExperienceView: React.FC<ExperienceViewProps> = ({
 	experienceTrack
 }) => {
-	const trueUpExperienceDetailVisibility = useApplicationStore(
-		state => state.trueUpExperienceDetailVisibility
-	)
-	const falsifyExperienceDetailVisibility = useApplicationStore(
-		state => state.falsifyExperienceDetailVisibility
-	)
-
-	const size = useThree(state => state.size)
-
-	useLayoutEffect(() => {
-		if (size.width >= 1024) trueUpExperienceDetailVisibility()
-		else falsifyExperienceDetailVisibility()
-
-		console.log('layout effect')
-	}, [
-		size,
-		trueUpExperienceDetailVisibility,
-		falsifyExperienceDetailVisibility
-	])
-
 	return (
 		<View track={experienceTrack}>
-			{/* Three.js */}
-			<ThreeJSExperience experienceTrack={experienceTrack} />
+			{/* Main Group that contain Experience Card & Experiences like threejs, reactjs, ...			 */}
+			<ResponsiveGroup>
+				{/* Main Card */}
+				<Card />
 
-			{/* React.js */}
-			{/* <ReactJSExperience experienceTrack={experienceTrack} /> */}
+				<ListGroup>
+					<ThreeJS experienceTrack={experienceTrack} />
+					<ReactJS experienceTrack={experienceTrack} />
+					<Animation experienceTrack={experienceTrack} />
+					<Modeling experienceTrack={experienceTrack} />
+					<Backend experienceTrack={experienceTrack} />
+				</ListGroup>
+			</ResponsiveGroup>
 
 			<PerspectiveCamera makeDefault fov={50} position={[0, 0, 6]} />
 		</View>

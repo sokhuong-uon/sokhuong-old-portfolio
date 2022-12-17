@@ -1,2 +1,2 @@
 export * from './ExperienceView'
-export * from './ThreeJSExperience'
+export * from './list'

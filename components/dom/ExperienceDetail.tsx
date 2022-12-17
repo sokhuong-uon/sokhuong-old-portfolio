@@ -4,6 +4,7 @@ import {
 	ExperienceDetail as ExperienceDetailPropsType,
 	useApplicationStore
 } from 'store'
+import { useResponsiveStore } from 'store/screen'
 import { ProjectDetailButton } from './button/ProjectDetailButton'
 import { XButton } from './button/XButton'
 import { Carousel } from './Carousel'
@@ -16,9 +17,16 @@ export const ExperienceDetail: React.FC<ExperienceDetailProps> = ({
 	description
 }) => {
 	const state = useApplicationStore()
+	const screenSize = useResponsiveStore(state => state.screenSize)
 
 	const { opacity } = useSpring({
-		opacity: state.experienceDetialVisible ? 1 : 0,
+		opacity:
+			state.experienceDetialVisible ||
+			screenSize === 'lg' ||
+			screenSize === 'xl' ||
+			screenSize === '2xl'
+				? 1
+				: 0,
 		config: {
 			duration: 600
 		}
