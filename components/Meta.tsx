@@ -17,7 +17,7 @@ export const Meta = () => {
 			/>
 			<meta
 				property="og:image"
-				content="https://sokhuong.vercel.app/media-card.png"
+				content="https://sokhuong.vercel.app/social.png"
 			/>
 		</Head>
 	)
