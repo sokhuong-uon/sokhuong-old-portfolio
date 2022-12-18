@@ -1,18 +1,16 @@
-import { ExperienceViewProps } from '@r3f/experience'
 import { a, useSpring } from '@react-spring/three'
 import { ReactThreeFiber, useFrame, useThree } from '@react-three/fiber'
-import { useDrag } from '@use-gesture/react'
 import { useActive } from 'hooks/r3f/useActive'
 import React, { useRef } from 'react'
+import { ExperienceViewProps } from '@r3f/experience'
+import { useDrag } from '@use-gesture/react'
 import { useApplicationStore } from 'store'
 
-export const Animation: React.FC<ExperienceViewProps> = ({
-	experienceTrack
-}) => {
+export const ThreeJS: React.FC<ExperienceViewProps> = ({ experienceTrack }) => {
 	const mesh = useRef<THREE.Mesh>(null!)
 	const group = useRef<THREE.Group>(null!)
 
-	const { animatingPosition } = useActive('animation')
+	const { animatingPosition } = useActive('threejs')
 
 	useFrame((_, delta) => {
 		mesh.current.rotation.x += delta * 0.3
@@ -29,32 +27,31 @@ export const Animation: React.FC<ExperienceViewProps> = ({
 	const size = useThree(state => state.size)
 
 	const [{ groupPositionX, groupScale }, groupPositionApi] = useSpring(() => ({
-		groupPositionX: [4, 0, 0] as ReactThreeFiber.Vector3,
+		groupPositionX: [0, 0, 0] as ReactThreeFiber.Vector3,
 		groupScale: [1, 1, 1]
 	}))
 
 	useDrag(
 		({ movement: [mx], active, delta: [dx] }) => {
-			if (viewingExperience === 'animation') {
+			if (viewingExperience === 'threejs') {
 				if (active) {
 					groupPositionApi.start({
-						groupPositionX: [(mx / size.width) * 5 + 4, 0, 0],
+						groupPositionX: [(mx / size.width) * 5, 0, 0],
 						groupScale: [0.8, 0.8, 0.8]
 					})
 				} else {
 					groupPositionApi.start({
-						groupPositionX: [4, 0, 0],
+						groupPositionX: [0, 0, 0],
 						groupScale: [1, 1, 1]
 					})
-					if (Math.abs(mx) > size.width / 4) {
-						mx < 0 && setViewingExperience('modeling')
-						mx > 0 && setViewingExperience('reactjs')
+					if (Math.abs(mx) > size.width / 4 && mx < 0) {
+						setViewingExperience('reactjs')
 					}
 				}
 			}
 		},
 		{
-			target: document.getElementById('ex-track')!
+			target: experienceTrack
 		}
 	)
 
@@ -68,12 +65,13 @@ export const Animation: React.FC<ExperienceViewProps> = ({
 			scale={groupScale}
 		>
 			<a.mesh
+				castShadow
 				ref={mesh}
 				scale={0.5}
 				// @ts-ignore
 				position={animatingPosition}
 			>
-				<icosahedronGeometry />
+				<torusKnotGeometry args={[1, 0.3, 80, 20]} />
 				<meshBasicMaterial color={'white'} />
 			</a.mesh>
 

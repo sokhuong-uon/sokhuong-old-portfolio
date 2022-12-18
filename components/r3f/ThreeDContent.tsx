@@ -7,7 +7,6 @@ import { sRGBEncoding } from 'three'
 
 type ThreeDContentProps = {
 	eventSource: React.MutableRefObject<HTMLElement>
-
 	// View track
 	experienceTrack: ExperienceViewProps['experienceTrack']
 	introductionTrack: IntroductionSectionProps['threeDIntroductionRef']
@@ -16,17 +15,19 @@ type ThreeDContentProps = {
 
 export const ThreeDContent: React.FC<ThreeDContentProps> = ({
 	eventSource,
-
+	// View track
 	introductionTrack,
 	experienceTrack,
 	contactTrack
 }) => {
 	return (
 		<Canvas
+			shadows
 			id="r3f-canvas"
 			eventSource={eventSource}
-			// gl={{ outputEncoding: sRGBEncoding }}
+			camera={{ position: [0, 0, 15], near: 5, far: 40 }}
 		>
+			{/* Responsive Scene setup*/}
 			<Setup />
 
 			{/* Views */}

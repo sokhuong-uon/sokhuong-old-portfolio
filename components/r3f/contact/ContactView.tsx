@@ -15,8 +15,8 @@ export const ContactView: React.FC<ContactViewProps> = ({ contactTrack }) => {
 
 	useFrame((_, delta) => {
 		if (tetrahedron.current) {
-			tetrahedron.current.rotation.x += delta * 0.5
-			tetrahedron.current.rotation.y += delta * 0.25
+			tetrahedron.current.rotation.x += delta * 0.1
+			tetrahedron.current.rotation.y += delta * 0.1
 		}
 	})
 
@@ -27,7 +27,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ contactTrack }) => {
 					<planeGeometry args={[4, 8, 3, 6]} />
 					<meshBasicMaterial transparent map={texture} />
 				</mesh> */}
-				<mesh ref={tetrahedron}>
+				<mesh scale={4} ref={tetrahedron}>
 					<tetrahedronGeometry />
 					<meshNormalMaterial />
 				</mesh>

@@ -8,8 +8,9 @@ import {
 	ThreeJS
 } from '@r3f/experience/list'
 import { ResponsiveGroup } from '@r3f/experience/ResponsiveGroup'
-import { PerspectiveCamera, View } from '@react-three/drei'
+import { ContactShadows, PerspectiveCamera, View } from '@react-three/drei'
 import React from 'react'
+import { Background } from './Background'
 
 export type ExperienceViewProps = {
 	experienceTrack: React.MutableRefObject<HTMLDivElement>
@@ -20,6 +21,8 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
 }) => {
 	return (
 		<View track={experienceTrack}>
+			<Background />
+
 			{/* Main Group that contain Experience Card & Experiences like threejs, reactjs, ...			 */}
 			<ResponsiveGroup>
 				{/* Main Card */}
@@ -33,6 +36,14 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
 					<Backend experienceTrack={experienceTrack} />
 				</ListGroup>
 			</ResponsiveGroup>
+
+			<ContactShadows
+				position={[0, -1.5, 0]}
+				opacity={0.75}
+				scale={40}
+				blur={1}
+				far={9}
+			/>
 
 			<PerspectiveCamera makeDefault fov={50} position={[0, 0, 6]} />
 		</View>

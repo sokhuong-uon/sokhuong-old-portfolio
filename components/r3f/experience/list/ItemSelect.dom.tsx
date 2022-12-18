@@ -1,15 +1,37 @@
+import { useLayoutEffect, useRef } from 'react'
 import { useApplicationStore } from 'store'
+import { useResponsiveStore } from 'store/screen'
 
-export const CarouselSelectionButtons = () => {
+export const ExperienceItemSelect = () => {
+	const container = useRef<HTMLDivElement>(null!)
+
 	const viewingExperience = useApplicationStore(
 		state => state.viewingExperience
+	)
+	const experienceDetialVisible = useApplicationStore(
+		state => state.experienceDetialVisible
 	)
 	const setViewingExperience = useApplicationStore(
 		state => state.setViewingExperience
 	)
 
+	const screenSize = useResponsiveStore(state => state.screenSize)
+
+	useLayoutEffect(() => {
+		container.current.style.visibility =
+			!experienceDetialVisible ||
+			screenSize === 'lg' ||
+			screenSize === 'xl' ||
+			screenSize === '2xl'
+				? 'visible'
+				: 'hidden'
+	}, [experienceDetialVisible, screenSize])
+
 	return (
-		<div className="gap-2 fcc">
+		<div
+			ref={container}
+			className="relative flex items-center justify-center gap-2"
+		>
 			{/* Three.js */}
 			<button
 				onClick={() => setViewingExperience('threejs')}

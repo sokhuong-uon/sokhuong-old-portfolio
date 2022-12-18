@@ -6,7 +6,10 @@ export const XButton = () => {
 	)
 
 	return (
-		<button onClick={() => falsifyExperienceDetailVisibility()} className="">
+		<button
+			onClick={() => falsifyExperienceDetailVisibility()}
+			className="p-2 m-4"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="26"

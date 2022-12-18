@@ -1,21 +1,14 @@
+import { ExperienceItemSwipe } from '@components/r3f/experience'
+import { ExperienceDescription } from '@r3f/experience/Description.dom'
 import { useSpring } from '@react-spring/three'
 import { a } from '@react-spring/web'
-import {
-	ExperienceDetail as ExperienceDetailPropsType,
-	useApplicationStore
-} from 'store'
+import { useApplicationStore } from 'store'
 import { useResponsiveStore } from 'store/screen'
 import { ProjectDetailButton } from './button/ProjectDetailButton'
 import { XButton } from './button/XButton'
 import { Carousel } from './Carousel'
 
-export type ExperienceDetailProps = ExperienceDetailPropsType
-
-export const ExperienceDetail: React.FC<ExperienceDetailProps> = ({
-	illustration,
-	skill,
-	description
-}) => {
+export const ExperienceDetail = () => {
 	const state = useApplicationStore()
 	const screenSize = useResponsiveStore(state => state.screenSize)
 
@@ -38,35 +31,30 @@ export const ExperienceDetail: React.FC<ExperienceDetailProps> = ({
 				pointerEvents: state.experienceDetialVisible ? 'auto' : 'none',
 				opacity: opacity
 			}}
-			className="w-full h-full text-white"
+			className="relative w-full h-full text-white lg:py-32"
 		>
-			{/* X Button */}
-			<div className="relative w-full pointer-events-auto lg:hidden h-2/5">
-				<XButton />
+			<div className="relative flex items-center w-full pointer-events-auto lg:hidden h-2/5">
+				<div className="absolute top-0 left-0">
+					<XButton />
+				</div>
+				<ExperienceItemSwipe />
 			</div>
 
 			{/* Description */}
-			<div className="w-full sm:h-3/5 lg:h-full">
-				<div className="flex flex-col items-center justify-center w-full h-full gap-16 py-6">
-					<div className="w-full px-6 xl:px-20">
-						<h3 className="py-2 text-lg font-semibold tracking-wider opacity-40">
-							{illustration}
-						</h3>
-
-						<h2 className="text-4xl font-semibold lg:text-5xl">{skill}</h2>
-
-						<h3 className="py-2 font-normal opacity-50">{description}</h3>
+			<div className="relative w-full h-3/5 sm:h-3/5 lg:h-full">
+				<div className="grid w-full h-full grid-cols-1 grid-rows-4 py-6">
+					<div className="relative w-full row-span-1">
+						<ExperienceDescription />
 					</div>
 
-					{/* Carousel */}
-					<Carousel />
+					<div className="relative w-full row-span-2">
+						<Carousel />
+					</div>
 
-					<div className="absolute top-auto hidden w-16 h-64 bg-black md:visible xl:left-5 -left-8 blur-md"></div>
-					<div className="absolute top-auto hidden w-16 h-64 bg-black md:visible xl:right-5 -right-8 blur-md"></div>
-
-					{/* Link */}
-					<div className="relative w-full h-12 px-3 overflow-hidden rounded-full pointer-events-auto fcc xl:px-20">
-						<ProjectDetailButton />
+					<div className="relative flex items-center justify-center w-full row-span-1">
+						<div className="relative w-full h-12 px-3 overflow-hidden rounded-full pointer-events-auto fcc xl:px-20">
+							<ProjectDetailButton />
+						</div>
 					</div>
 				</div>
 			</div>

@@ -12,7 +12,7 @@ export const useActive = (item: Experiences) => {
 			state.viewingExperience === item &&
 			state.experienceDetialVisible &&
 			(screenSize === 'xs' || screenSize === 'sm' || screenSize === 'md')
-				? ([0, 1.5, 0] as ReactThreeFiber.Vector3)
-				: ([0, 0, 0] as ReactThreeFiber.Vector3)
+				? ([0, 1.6, 0] as ReactThreeFiber.Vector3)
+				: ([0, -0.3, 0] as ReactThreeFiber.Vector3)
 	})
 }
