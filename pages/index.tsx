@@ -4,6 +4,7 @@ import { Meta } from '@components/Meta'
 import { ThreeDContent } from '@r3f'
 import type { NextPage } from 'next'
 import { useRef } from 'react'
+import { WorkInProgress } from '@components/WorkInProgress'
 
 const poppins = Poppins({
 	weight: [
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
 				id="container"
 				className={`${poppins.className} relative w-screen h-screen overflow-hidden`}
 			>
+				<WorkInProgress></WorkInProgress>
 				{/* Contain Canvas Element */}
 				<figure id="3d-content" className="absolute inset-0 z-0 w-full h-full">
 					{/* Pass main as event source of the canvas */}
