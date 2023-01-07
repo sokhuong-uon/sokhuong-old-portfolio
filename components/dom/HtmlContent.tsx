@@ -1,33 +1,25 @@
-import { ContactSection, ContactSectionProps } from './ContactSection'
-import { ExperienceSection, ExperienceSectionProps } from './ExperienceSection'
-import {
-	IntroductionSection,
-	IntroductionSectionProps
-} from './IntroductionSection'
+import { ContactSection } from './ContactSection'
+import { ExperienceSection } from './ExperienceSection'
+import { IntroductionSection } from './IntroductionSection'
 
-type HtmlContentProps = {
-	experienceTrack: ExperienceSectionProps['experienceTrack']
-	introductionTrack: IntroductionSectionProps['threeDIntroductionRef']
-	contactTrack: ContactSectionProps['contactRef']
-}
+type HtmlContentProps = {}
 
-export const HtmlContent: React.FC<HtmlContentProps> = ({
-	experienceTrack,
-	introductionTrack,
-	contactTrack
-}) => {
+export const HtmlContent: React.FC<HtmlContentProps> = () => {
 	return (
-		<div className="relative w-full h-full overflow-x-hidden overflow-y-auto pointer-events-auto scroll-smooth snap-y">
-			<div className="w-full h-full snap-center">
-				<IntroductionSection threeDIntroductionRef={introductionTrack} />
+		<div
+			id="scroll-container"
+			className="relative w-full h-full overflow-x-hidden overflow-y-auto pointer-events-auto scroll-smooth snap-y"
+		>
+			<div id="intro" className="w-full h-full snap-center">
+				<IntroductionSection />
 			</div>
 
 			<div id="experience-container" className="w-full h-full snap-center">
-				<ExperienceSection experienceTrack={experienceTrack} />
+				<ExperienceSection />
 			</div>
 
-			<div className="relative w-full h-full snap-center">
-				<ContactSection contactRef={contactTrack} />
+			<div id="contact" className="relative w-full h-full snap-center">
+				<ContactSection />
 			</div>
 		</div>
 	)

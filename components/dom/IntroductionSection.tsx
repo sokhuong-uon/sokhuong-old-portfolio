@@ -4,21 +4,11 @@ export type IntroductionSectionProps = {
 	threeDIntroductionRef: React.MutableRefObject<HTMLDivElement>
 }
 
-export const IntroductionSection: React.FC<IntroductionSectionProps> = ({
-	threeDIntroductionRef
-}) => {
+export const IntroductionSection = () => {
 	return (
-		<div className="relative flex-col w-full h-full text-white fcc md:flex-row">
-			{/* View Track */}
-			<div className="relative w-full h-1/2 md:h-full md:w-1/2">
-				<div
-					className="w-full h-[36rem] md:h-full md:w-[36rem] lg:w-full"
-					ref={threeDIntroductionRef}
-				></div>
-			</div>
-
+		<div className="relative flex-col w-full h-full text-white border border-black pointer-events-none fcc md:flex-row">
 			{/* HTML */}
-			<div className="relative flex justify-between w-full pb-6 sm:items-center md:h-full md:w-1/2 h-1/2">
+			<div className="relative flex items-end w-full h-full pb-6 border ">
 				{/* Introduction */}
 				<div className="relative flex justify-center w-full ">
 					{/* pink */}
@@ -35,29 +25,6 @@ export const IntroductionSection: React.FC<IntroductionSectionProps> = ({
 							Make Immersive 3D Experience & Responsive UI
 						</p>
 					</div>
-				</div>
-
-				{/* Scroll down */}
-				<div className="absolute flex flex-col items-center justify-center w-full opacity-50 sm:hidden bottom-12">
-					<p className="w-32 mb-2 text-sm tracking-wider text-center opacity-60">
-						Scroll down
-					</p>
-
-					{/* Scroll down arrow  */}
-					<figure className="opacity-60">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="47"
-							fill="none"
-							className="scale-y-75"
-						>
-							<path
-								fill="currentColor"
-								d="M7.293 46.707a1 1 0 0 0 1.414 0l6.364-6.364a1 1 0 0 0-1.414-1.414L8 44.586l-5.657-5.657A1 1 0 0 0 .93 40.343l6.364 6.364ZM7 0v46h2V0H7Z"
-							/>
-						</svg>
-					</figure>
 				</div>
 			</div>
 		</div>

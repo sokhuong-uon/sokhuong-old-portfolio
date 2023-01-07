@@ -1,66 +1,78 @@
-import { Poppins } from '@next/font/google'
-import { HtmlContent } from '@dom'
-import { Meta } from '@components/Meta'
-import { ThreeDContent } from '@r3f'
+import { a } from '@react-spring/web'
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import { useRef } from 'react'
-import { WorkInProgress } from '@components/WorkInProgress'
-
-const poppins = Poppins({
-	weight: [
-		'300', // light
-		'400', // normal
-		'500', // medium
-		'600', // semibold
-		'700' // bold
-	],
-	variable: '--font-poppins',
-	subsets: ['latin']
-})
 
 const Home: NextPage = () => {
-	const introductionRef = useRef<HTMLDivElement>(null!)
-	const contactRef = useRef<HTMLDivElement>(null!)
-
 	const mainRef = useRef<HTMLElement>(null!)
-
-	const experienceRef = useRef<HTMLDivElement>(null!)
 
 	return (
 		<>
-			{/* Head and Meta tags */}
-			<Meta />
+			<Head>
+				<title>Sokhuong | Creative Coding</title>
+				<meta
+					name="Description"
+					content="Web Developer. Frontend, WebGL, 3D, Three.js, Animation, React Three Fiber, Blender, React.js, TypeScript."
+				/>
 
-			<main
+				{/* Open Graph */}
+				<meta property="og:title" content="Sokhuong | Web Dev" />
+				<meta
+					property="og:description"
+					content="React.js | Vue.js | WebGL | Animation"
+				/>
+				<meta
+					property="og:image"
+					content="https://sokhuong.vercel.app/social.png"
+				/>
+			</Head>
+			<section
 				ref={mainRef}
-				id="container"
-				className={`${poppins.className} relative w-screen h-screen overflow-hidden`}
+				className="relative w-full h-full overflow-hidden text-white "
 			>
-				<WorkInProgress></WorkInProgress>
-				{/* Contain Canvas Element */}
-				<figure id="3d-content" className="absolute inset-0 z-0 w-full h-full">
-					{/* Pass main as event source of the canvas */}
-					<ThreeDContent
-						eventSource={mainRef}
-						experienceTrack={experienceRef}
-						introductionTrack={introductionRef}
-						contactTrack={contactRef}
-					/>
-				</figure>
-
-				{/* Contain HTML Overlay */}
-				<div
-					id="html-content"
-					className="absolute inset-0 z-10 w-full h-full pointer-events-none"
-				>
-					<HtmlContent
-						experienceTrack={experienceRef}
-						introductionTrack={introductionRef}
-						contactTrack={contactRef}
-					/>
-				</div>
-			</main>
+				<Description
+					description="Create Immersive 3D experience and interactive UI."
+					intro="I AM SOKHUONG"
+					skill="WEB DEVELOPER"
+				/>
+			</section>
 		</>
+	)
+}
+
+type DescriptionProps = {
+	description: string
+	skill: string
+	intro: string
+}
+
+export const Description: React.FC<DescriptionProps> = ({
+	description,
+	intro,
+	skill
+}) => {
+	return (
+		<div className="absolute inset-0 flex flex-col w-full h-full text-white pointer-events-none">
+			<div className="relative w-full pt-32 ">
+				<h3 className="relative w-full h-8 overflow-hidden text-lg font-semibold tracking-wider opacity-40">
+					<a.span className="absolute w-full h-full text-center">
+						{intro}
+					</a.span>
+				</h3>
+
+				<h2 className="relative w-full h-12 overflow-hidden text-4xl font-semibold lg:text-5xl">
+					<a.span className="absolute w-full text-center">{skill}</a.span>
+				</h2>
+			</div>
+
+			<div className="absolute w-full bottom-64">
+				<h1 className="relative h-12 overflow-hidden font-normal opacity-50 sm:h-7">
+					<a.span className="absolute w-full h-full text-center">
+						{description}
+					</a.span>
+				</h1>
+			</div>
+		</div>
 	)
 }
 

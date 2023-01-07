@@ -14,7 +14,7 @@ export const ExperienceDescription = () => {
 	)
 }
 
-const Description: React.FC<{ item: Experiences }> = ({ item }) => {
+export const Description: React.FC<{ item: Experiences }> = ({ item }) => {
 	const experiences = useApplicationStore(state => state.experiences)
 	const { y, opacity } = useActiveDescription(item)
 
