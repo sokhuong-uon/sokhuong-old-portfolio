@@ -4,6 +4,13 @@ import { Description } from 'pages'
 import { useRef } from 'react'
 import { Decks } from '../../components/dom/Decks'
 
+const cards = [
+	'/experience/three/a.png',
+	'/experience/three/a.png',
+	'/experience/three/a.png',
+	'/experience/three/a.png'
+]
+
 const ModelingExperience: NextPage = () => {
 	const mainRef = useRef<HTMLElement>(null!)
 
@@ -33,7 +40,7 @@ const ModelingExperience: NextPage = () => {
 				ref={mainRef}
 				className={`relative pointer-events-auto w-full h-full overflow-hidden`}
 			>
-				<Decks />
+				<Decks cards={cards} />
 
 				<Description
 					description="For Enhancing Visual Aesthetic."

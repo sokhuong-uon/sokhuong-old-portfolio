@@ -1,14 +1,7 @@
 import { a, to as interpolate, useSprings } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
 import { useState } from 'react'
-
-const cards = [
-	'https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg',
-	'https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg',
-	'https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg',
-	'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-	'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg'
-]
+import Image from 'next/image'
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i: number) => ({
@@ -27,7 +20,7 @@ const trans = (r: number, s: number) =>
 		r / 10
 	}deg) rotateZ(${r}deg) scale(${s})`
 
-function Deck() {
+function Deck({ cards }: { cards: string[] }) {
 	const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
 
 	const [props, api] = useSprings(cards.length, i => ({
@@ -77,7 +70,7 @@ function Deck() {
 			{props.map(({ x, y, rot, scale }, i) => (
 				<a.div
 					className={
-						'w-56 p-4 h-96 touch-none fcc absolute will-change-transform'
+						'w-56 p-4 h-96 touch-none fcc absolute will-change-transform '
 					}
 					key={i}
 					style={{
@@ -103,10 +96,10 @@ function Deck() {
 	)
 }
 
-function Decks() {
+function Decks({ cards }: { cards: string[] }) {
 	return (
-		<div className="fcc h-full touch-none">
-			<Deck />
+		<div className="h-full fcc touch-none">
+			<Deck cards={cards} />
 		</div>
 	)
 }
