@@ -30,7 +30,7 @@ const Contact: NextPage = () => {
 
 			<section
 				ref={mainRef}
-				className={`relative w-full flex items-center justify-center h-full pointer-events-none overflow-hidden`}
+				className={`relative w-full fcc h-full pointer-events-none overflow-hidden`}
 			>
 				<ContactAnim />
 			</section>

@@ -28,10 +28,7 @@ export const ExperienceItemSelect = () => {
 	}, [experienceDetialVisible, screenSize])
 
 	return (
-		<div
-			ref={container}
-			className="relative flex items-center justify-center gap-2"
-		>
+		<div ref={container} className="relative fcc gap-2">
 			{/* Three.js */}
 			<button
 				onClick={() => setViewingExperience('threejs')}

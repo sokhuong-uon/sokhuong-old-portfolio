@@ -79,7 +79,7 @@ export const ListItem: React.FC<
 		<>
 			<a
 				href={link}
-				className="relative flex items-center justify-center transition-all duration-500 rounded-full pointer-events-auto bg-gradient-to-r from-pink-400 to-rose-600"
+				className="relative fcc transition-all duration-500 rounded-full pointer-events-auto bg-gradient-to-r from-pink-400 to-rose-600"
 			>
 				<figure className="absolute left-4">{children}</figure>
 

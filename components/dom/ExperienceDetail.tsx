@@ -51,7 +51,7 @@ export const ExperienceDetail = () => {
 						<Carousel />
 					</div>
 
-					<div className="relative flex items-center justify-center w-full row-span-1">
+					<div className="relative fcc w-full row-span-1">
 						<div className="relative w-full h-12 px-3 overflow-hidden rounded-full pointer-events-auto fcc xl:px-20">
 							<ProjectDetailButton />
 						</div>

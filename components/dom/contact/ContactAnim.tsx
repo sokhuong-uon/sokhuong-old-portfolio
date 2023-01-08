@@ -44,9 +44,7 @@ export default function ContactAnim() {
 	}, [])
 
 	return (
-		<div
-			className={'w-full overflow-hidden  flex items-center justify-center p-2'}
-		>
+		<div className={'w-full overflow-hidden  fcc p-2'}>
 			<animated.div
 				style={{ ...rest, width: size, height: size }}
 				className={
@@ -57,7 +55,7 @@ export default function ContactAnim() {
 					<animated.a
 						href={item.link}
 						className={
-							'w-24 group relative pointer-events-auto h-24 bg-opacity-30 m-3 flex items-center justify-center aspect-square text-white/60 hover:text-white/90 bg-white/10 rounded-md will-change-[`transform,opacity`]'
+							'w-24 group relative pointer-events-auto h-24 bg-opacity-30 m-3 fcc aspect-square text-white/60 hover:text-white/90 bg-white/10 rounded-md will-change-[`transform,opacity`]'
 						}
 						style={{ ...style }}
 					>

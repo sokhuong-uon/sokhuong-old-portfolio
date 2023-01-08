@@ -77,7 +77,7 @@ function Deck() {
 			{props.map(({ x, y, rot, scale }, i) => (
 				<a.div
 					className={
-						'w-56 p-4 h-96 touch-none flex items-center justify-center absolute will-change-transform'
+						'w-56 p-4 h-96 touch-none fcc absolute will-change-transform'
 					}
 					key={i}
 					style={{
@@ -105,7 +105,7 @@ function Deck() {
 
 function Decks() {
 	return (
-		<div className="flex items-center justify-center h-full touch-none">
+		<div className="fcc h-full touch-none">
 			<Deck />
 		</div>
 	)

@@ -65,7 +65,7 @@ export const Description: React.FC<DescriptionProps> = ({
 					</h2>
 				</div>
 
-				<div className="relative flex items-center justify-center w-full h-1/2">
+				<div className="relative fcc w-full h-1/2">
 					<h1 className="relative w-full h-12 overflow-hidden font-normal sm:h-7">
 						<AnimatedParagraph text={description}></AnimatedParagraph>
 					</h1>
