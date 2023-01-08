@@ -13,18 +13,15 @@ const Contact: NextPage = () => {
 				<title>Sokhuong | Contact</title>
 				<meta
 					name="Description"
-					content="Web Developer. Frontend, WebGL, 3D, Three.js, Animation, React Three Fiber, Blender, React.js, TypeScript."
+					content="twitter:@SOKHUONG3, youtuve:@alotofcode, github:sokhuong-uon"
 				/>
 
 				{/* Open Graph */}
-				<meta property="og:title" content="Sokhuong | Web Dev" />
-				<meta
-					property="og:description"
-					content="React.js | Vue.js | WebGL | Animation"
-				/>
+				<meta property="og:title" content="Sokhuong | Contact" />
+				<meta property="og:description" content="Sokhuong Social Profile" />
 				<meta
 					property="og:image"
-					content="https://sokhuong.vercel.app/social.png"
+					content="https://sokhuong.vercel.app/social/contact.png"
 				/>
 			</Head>
 
