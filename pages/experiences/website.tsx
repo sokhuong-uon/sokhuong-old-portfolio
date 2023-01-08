@@ -17,23 +17,22 @@ const WebsiteExperience: NextPage = () => {
 
 	return (
 		<>
-			{/* Head and Meta tags */}
 			<Head>
 				<title>Sokhuong | Web dev</title>
 				<meta
 					name="Description"
-					content="Web Developer. Frontend, WebGL, 3D, Three.js, Animation, React Three Fiber, Blender, React.js, TypeScript."
+					content="Build Web Application with various technologies such as react, vue, tailwind css, nodejs"
 				/>
 
 				{/* Open Graph */}
-				<meta property="og:title" content="Sokhuong | Web Dev" />
+				<meta property="og:title" content="Sokhuong | Web Application" />
 				<meta
 					property="og:description"
-					content="React.js | Vue.js | WebGL | Animation"
+					content="Build Web Application with various Technologies"
 				/>
 				<meta
 					property="og:image"
-					content="https://sokhuong.vercel.app/social.png"
+					content="https://sokhuong.vercel.app/social/website.png"
 				/>
 			</Head>
 

@@ -1,12 +1,10 @@
 import {
 	animated,
-	config,
 	useChain,
-	useSpring,
 	useSpringRef,
 	useTransition
 } from '@react-spring/web'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { data } from './data'
 
@@ -14,15 +12,6 @@ export default function ContactAnim() {
 	const [open, set] = useState(false)
 
 	const springApi = useSpringRef()
-	const { size, ...rest } = useSpring({
-		ref: springApi,
-		config: config.stiff,
-		from: { size: '20%' },
-		to: {
-			size: open ? '100%' : '20%'
-			// background: open ? 'white' : 'hotpink'
-		}
-	})
 
 	const transApi = useSpringRef()
 	const transition = useTransition(open ? data : [], {
@@ -33,11 +22,7 @@ export default function ContactAnim() {
 		leave: { opacity: 0, scale: 0 }
 	})
 
-	// This will orchestrate the two animations above, comment the last arg and it creates a sequence
-	useChain(open ? [springApi, transApi] : [transApi, springApi], [
-		0,
-		open ? 0.1 : 0.6
-	])
+	useChain(open ? [springApi, transApi] : [transApi, springApi], [0])
 
 	useEffect(() => {
 		set(true)
@@ -45,17 +30,12 @@ export default function ContactAnim() {
 
 	return (
 		<div className={'w-full overflow-hidden  fcc p-2'}>
-			<animated.div
-				style={{ ...rest, width: size, height: size }}
-				className={
-					' items-center w-96 justify-center relative flex-wrap flex rounded-md cursor-pointer will-change-["width,height"] '
-				}
-			>
+			<animated.div className='items-center w-96 justify-center relative flex-wrap flex rounded-md cursor-pointer will-change-["width,height"] '>
 				{transition((style, item) => (
 					<animated.a
 						href={item.link}
 						className={
-							'w-24 group relative pointer-events-auto h-24 bg-opacity-30 m-3 fcc aspect-square text-white/60 hover:text-white/90 bg-white/10 rounded-md will-change-[`transform,opacity`]'
+							'w-24 group relative pointer-events-auto h-24 bg-opacity-30 m-3 fcc aspect-square shadow-zinc-600 shadow-sm text-white/60 hover:text-white/90 bg-black rounded-md will-change-[`transform,opacity`]'
 						}
 						style={{ ...style }}
 					>

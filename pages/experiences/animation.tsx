@@ -17,23 +17,22 @@ const AnimationExperience: NextPage = () => {
 
 	return (
 		<>
-			{/* Head and Meta tags */}
 			<Head>
 				<title>Sokhuong | Animation</title>
 				<meta
 					name="Description"
-					content="Web Developer. Frontend, WebGL, 3D, Three.js, Animation, React Three Fiber, Blender, React.js, TypeScript."
+					content="Interactive website with animation. Experience with linear interpulation, gsap, twean, and react spring"
 				/>
 
 				{/* Open Graph */}
-				<meta property="og:title" content="Sokhuong | Web Dev" />
+				<meta property="og:title" content="Sokhuong | Animation" />
 				<meta
 					property="og:description"
-					content="React.js | Vue.js | WebGL | Animation"
+					content="Animation | React | ThreeJS | React Spring"
 				/>
 				<meta
 					property="og:image"
-					content="https://sokhuong.vercel.app/social.png"
+					content="https://sokhuong.vercel.app/social/animation.png"
 				/>
 			</Head>
 

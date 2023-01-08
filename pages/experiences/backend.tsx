@@ -16,23 +16,22 @@ const BackendExperience: NextPage = () => {
 
 	return (
 		<>
-			{/* Head and Meta tags */}
 			<Head>
 				<title>Sokhuong | Backend</title>
 				<meta
 					name="Description"
-					content="Web Developer. Frontend, WebGL, 3D, Three.js, Animation, React Three Fiber, Blender, React.js, TypeScript."
+					content="Build and deploy back-end application with Node.js frameworks with Nuxt.js and Next.js. Experience with strapi and golang"
 				/>
 
 				{/* Open Graph */}
-				<meta property="og:title" content="Sokhuong | Web Dev" />
+				<meta property="og:title" content="Sokhuong | Backend Application" />
 				<meta
 					property="og:description"
-					content="React.js | Vue.js | WebGL | Animation"
+					content="Back-end app with Node.js framworks"
 				/>
 				<meta
 					property="og:image"
-					content="https://sokhuong.vercel.app/social.png"
+					content="https://sokhuong.vercel.app/social/backend.png"
 				/>
 			</Head>
 

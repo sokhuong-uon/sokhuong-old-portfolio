@@ -32,7 +32,12 @@ export const DockCard = ({ link, children }: DockCardProps) => {
 	}, [router])
 
 	return (
-		<Link href={link} className={'flex flex-col items-center gap-1'}>
+		<Link
+			href={link}
+			className={
+				'flex duration-500 transition-transform hover:scale-110 flex-col items-center gap-1'
+			}
+		>
 			<animated.button
 				ref={cardRef}
 				className={'rounded-md bg-white/10 cursor-pointer'}
