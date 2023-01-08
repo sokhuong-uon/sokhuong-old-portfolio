@@ -88,8 +88,14 @@ function Deck({ cards }: { cards: string[] }) {
 							boxShadow:
 								'0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3)'
 						}}
-						className="w-full h-full bg-pink-600 bg-center bg-no-repeat bg-cover rounded-md touch-none will-change-transform "
+						className="relative w-full h-full bg-pink-600 bg-center bg-no-repeat bg-cover rounded-md touch-none will-change-transform "
 					/>
+					<a
+						href="https://sokhuong.vercel.app"
+						className="absolute w-9/12 text-center text-white/80 bottom-10"
+					>
+						sokhuong.vercel.app
+					</a>
 				</a.div>
 			))}
 		</>
