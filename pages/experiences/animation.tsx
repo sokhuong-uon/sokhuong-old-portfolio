@@ -5,11 +5,8 @@ import { useRef } from 'react'
 import { Decks } from '../../components/dom/Decks'
 
 const cards = [
-	'/experience/three/a.png',
-	'/experience/three/a.png',
-	'/experience/three/a.png',
-	'/experience/three/a.png',
-	'/experience/three/a.png'
+	'/experience/animation/gsap.jpg',
+	'/experience/animation/react-spring.jpg'
 ]
 
 const AnimationExperience: NextPage = () => {
