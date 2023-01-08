@@ -6,7 +6,7 @@ import {
 	useSpringRef,
 	useTransition
 } from '@react-spring/web'
-import { useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 
 import { data } from './data'
 
@@ -39,7 +39,7 @@ export default function ContactAnim() {
 		open ? 0.1 : 0.6
 	])
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		set(true)
 	}, [])
 
