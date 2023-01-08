@@ -7,7 +7,6 @@ import { Decks } from '../../components/dom/Decks'
 const cards = [
 	'/experience/three/a.png',
 	'/experience/three/a.png',
-	'/experience/three/a.png',
 	'/experience/three/a.png'
 ]
 
