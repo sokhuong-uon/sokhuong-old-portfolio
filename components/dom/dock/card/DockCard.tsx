@@ -10,7 +10,7 @@ type DockCardProps = React.PropsWithChildren & {
 }
 
 export const DockCard = ({ link, children }: DockCardProps) => {
-	const cardRef = React.useRef<HTMLButtonElement>(null!)
+	const cardRef = React.useRef<HTMLDivElement>(null!)
 
 	const router = useRouter()
 
@@ -38,13 +38,13 @@ export const DockCard = ({ link, children }: DockCardProps) => {
 				'flex duration-500 transition-transform hover:scale-110 flex-col items-center gap-1'
 			}
 		>
-			<animated.button
+			<animated.div
 				ref={cardRef}
 				className={'rounded-md bg-white/10 cursor-pointer'}
 				style={{ y, scale }}
 			>
 				{children}
-			</animated.button>
+			</animated.div>
 
 			<animated.div
 				className={'w-2 h-2 bg-white rounded-full'}

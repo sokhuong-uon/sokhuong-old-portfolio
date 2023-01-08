@@ -17,13 +17,13 @@ const poppins = Poppins({
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
 	return (
-		<div className="relative overflow-hidden">
+		<div className="relative w-screen overflow-hidden mobile-fit-height">
 			<figure id="3d-content" className="absolute inset-0 w-full h-full">
 				<ThreeDContent />
 			</figure>
 
 			<main
-				className={`${poppins.className} relative w-screen h-screen pointer-events-none overflow-hidden`}
+				className={`${poppins.className} relative w-screen mobile-fit-height pointer-events-none overflow-hidden`}
 			>
 				{children}
 			</main>

@@ -92,7 +92,7 @@ function Deck({ cards }: { cards: string[] }) {
 					/>
 					<a
 						href="https://sokhuong.vercel.app"
-						className="absolute w-9/12 text-center text-white/80 bottom-10"
+						className="absolute w-9/12 text-center text-white/40 drop-shadow-sm bottom-12"
 					>
 						sokhuong.vercel.app
 					</a>

@@ -53,17 +53,17 @@ export const Description: React.FC<DescriptionProps> = ({
 		<div className="absolute inset-0 flex text-white pointer-events-none">
 			<div className="relative flex flex-col w-full h-full">
 				<div className="relative flex flex-col items-center justify-center w-full h-1/2">
-					<h3 className="relative w-full h-8 overflow-hidden text-lg font-semibold tracking-wider opacity-40">
+					<h3 className="relative w-full h-8 overflow-hidden text-lg font-semibold tracking-wider pointer-events-auto select-none opacity-40">
 						<AnimatedIntro text={intro} />
 					</h3>
 
-					<h2 className="relative w-full h-12 overflow-hidden text-4xl font-semibold lg:text-5xl">
+					<h2 className="relative w-full h-12 overflow-hidden text-4xl font-semibold pointer-events-auto select-none lg:text-5xl">
 						<AnimatedIntro text={skill} />
 					</h2>
 				</div>
 
 				<div className="relative w-full fcc h-1/2">
-					<h1 className="relative w-full h-12 overflow-hidden font-normal sm:h-7">
+					<h1 className="relative w-full h-12 overflow-hidden font-normal pointer-events-auto select-none sm:h-7">
 						<AnimatedParagraph text={description}></AnimatedParagraph>
 					</h1>
 				</div>
