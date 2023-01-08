@@ -5,10 +5,10 @@ import { useRef } from 'react'
 import { Decks } from '../../components/dom/Decks'
 
 const cards = [
-	'/experience/backend/golang.jpg',
+	'/experience/backend/python.jpg',
 	'/experience/backend/nodejs.jpg',
 	'/experience/backend/nestjs.jpg',
-	'/experience/backend/python.jpg'
+	'/experience/backend/golang.jpg'
 ]
 
 const BackendExperience: NextPage = () => {
