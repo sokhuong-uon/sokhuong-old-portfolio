@@ -1,4 +1,3 @@
-import { Meta } from '@components/Meta'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Description } from 'pages'
@@ -39,7 +38,7 @@ const BackendExperience: NextPage = () => {
 				<Description
 					description="With Nest.JS & Golang."
 					intro="BUILD"
-					skill="BACK-END SERVER"
+					skill="BACK-END APP"
 				/>
 			</section>
 		</>

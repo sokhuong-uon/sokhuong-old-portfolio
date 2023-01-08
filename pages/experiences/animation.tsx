@@ -1,4 +1,3 @@
-import { Meta } from '@components/Meta'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Description } from 'pages'

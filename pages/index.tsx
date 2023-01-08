@@ -26,6 +26,7 @@ const Home: NextPage = () => {
 					content="https://sokhuong.vercel.app/social.png"
 				/>
 			</Head>
+
 			<section
 				ref={mainRef}
 				className="relative w-full h-full overflow-hidden text-white "
@@ -52,28 +53,23 @@ export const Description: React.FC<DescriptionProps> = ({
 	skill
 }) => {
 	return (
-		<div className="absolute inset-0 flex flex-col w-full h-full text-white pointer-events-none">
-			<div className="relative w-full pt-32 ">
-				<h3 className="relative w-full h-8 overflow-hidden text-lg font-semibold tracking-wider opacity-40">
-					{/* <a.span className="absolute w-full h-full text-center">
-						{intro}
-					</a.span> */}
-					<AnimatedIntro text={intro} />
-				</h3>
+		<div className="absolute inset-0 flex text-white pointer-events-none">
+			<div className="relative flex flex-col w-full h-full">
+				<div className="relative flex flex-col items-center justify-center w-full h-1/2">
+					<h3 className="relative w-full h-8 overflow-hidden text-lg font-semibold tracking-wider opacity-40">
+						<AnimatedIntro text={intro} />
+					</h3>
 
-				<h2 className="relative w-full h-12 overflow-hidden text-4xl font-semibold lg:text-5xl">
-					{/* <a.span className="absolute w-full text-center">{skill}</a.span> */}
-					<AnimatedIntro text={skill} />
-				</h2>
-			</div>
+					<h2 className="relative w-full h-12 overflow-hidden text-4xl font-semibold lg:text-5xl">
+						<AnimatedIntro text={skill} />
+					</h2>
+				</div>
 
-			<div className="absolute w-full bottom-64">
-				<h1 className="relative h-12 overflow-hidden font-normal opacity-50 sm:h-7">
-					{/* <a.span className="absolute w-full h-full text-center">
-						{description}
-					</a.span> */}
-					<AnimatedParagraph text={description}></AnimatedParagraph>
-				</h1>
+				<div className="relative flex items-center justify-center w-full h-1/2">
+					<h1 className="relative w-full h-12 overflow-hidden font-normal sm:h-7">
+						<AnimatedParagraph text={description}></AnimatedParagraph>
+					</h1>
+				</div>
 			</div>
 		</div>
 	)
@@ -82,7 +78,7 @@ export const Description: React.FC<DescriptionProps> = ({
 function AnimatedParagraph({ text }: { text: string }) {
 	const transitions = useTransition([text], {
 		from: { opacity: 0 },
-		enter: { opacity: 1 },
+		enter: { opacity: 0.6 },
 		leave: { opacity: 0 },
 		config: {
 			duration: 1000

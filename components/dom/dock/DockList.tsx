@@ -1,6 +1,5 @@
 import { Card } from './card/Card'
 import { DockCard } from './card/DockCard'
-import { DockDivider } from './divider/DockDivider'
 
 export const DockList = () => {
 	return (
@@ -19,7 +18,6 @@ export const DockList = () => {
 				</Card>
 			</DockCard>
 
-			<DockDivider />
 			<DockCard link="/experiences/threejs">
 				<Card>
 					<svg
@@ -38,7 +36,7 @@ export const DockList = () => {
 						xmlns="http://www.w3.org/2000/svg"
 						width="24"
 						height="24"
-						fill="correntColor"
+						fill="currentColor"
 					>
 						<path d="M22 20H11v-7h11v7ZM9 20H2v-7h7v7Zm13-9H2V4h20v7Z" />
 					</svg>
@@ -90,14 +88,13 @@ export const DockList = () => {
 				</Card>
 			</DockCard>
 
-			<DockDivider />
 			<DockCard link="/contact">
 				<Card>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
 						fill="currentColor"
-						className={'w-8 h-8 relative z-0'}
+						className={'w-6 h-6 relative '}
 					>
 						<path
 							fillRule="evenodd"

@@ -72,14 +72,14 @@ export const MediaLinks = () => {
 	)
 }
 
-const ListItem: React.FC<
+export const ListItem: React.FC<
 	PropsWithChildren & { link: string; socialHandle: string }
 > = ({ children, link, socialHandle }) => {
 	return (
 		<>
 			<a
 				href={link}
-				className="relative flex items-center justify-center h-12 transition-all duration-500 rounded-full pointer-events-auto hover:scale-110 w-60 bg-gradient-to-r from-pink-400 to-rose-600"
+				className="relative flex items-center justify-center transition-all duration-500 rounded-full pointer-events-auto bg-gradient-to-r from-pink-400 to-rose-600"
 			>
 				<figure className="absolute left-4">{children}</figure>
 

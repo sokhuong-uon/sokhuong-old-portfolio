@@ -1,5 +1,4 @@
-import { MediaLinks } from '@components/dom'
-import { Meta } from '@components/Meta'
+import ContactAnim from '@components/dom/contact/ContactAnim'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRef } from 'react'
@@ -31,9 +30,9 @@ const Contact: NextPage = () => {
 
 			<section
 				ref={mainRef}
-				className={`relative w-full h-full pointer-events-none overflow-hidden`}
+				className={`relative w-full flex items-center justify-center h-full pointer-events-none overflow-hidden`}
 			>
-				<MediaLinks />
+				<ContactAnim />
 			</section>
 		</>
 	)

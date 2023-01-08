@@ -8,8 +8,8 @@ const poppins = Poppins({
 		'300', // light
 		'400', // normal
 		'500', // medium
-		'600', // semibold
-		'700' // bold
+		'600' // semibold
+		// '700' // bold
 	],
 	variable: '--font-poppins',
 	subsets: ['latin']
@@ -17,7 +17,7 @@ const poppins = Poppins({
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
 	return (
-		<>
+		<div className="relative overflow-hidden">
 			<figure id="3d-content" className="absolute inset-0 w-full h-full">
 				<ThreeDContent />
 			</figure>
@@ -28,8 +28,12 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
 				{children}
 			</main>
 
-			<Dock></Dock>
-		</>
+			<div className="absolute inset-0 pointer-events-none">
+				<div className="flex flex-col items-center justify-end w-full h-full">
+					<Dock></Dock>
+				</div>
+			</div>
+		</div>
 	)
 }
 export { Layout }
