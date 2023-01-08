@@ -38,8 +38,8 @@ const WebsiteExperience: NextPage = () => {
 
 				<Description
 					description="Embracing Performance, Accessibility & Aesthetic."
-					intro="CREATE INTERACTIVE"
-					skill="RESPONSIVE WEBSITES"
+					intro="CREATE RESPONSIVE"
+					skill="WEBSITES"
 				/>
 			</section>
 		</>

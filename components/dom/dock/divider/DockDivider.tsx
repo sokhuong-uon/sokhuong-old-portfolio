@@ -3,8 +3,6 @@ import { useGesture } from '@use-gesture/react'
 import { DOCK_ZOOM_LIMIT } from '../Dock'
 import { useDock } from '../DockContext'
 
-import styles from './divide.module.scss'
-
 export const DockDivider = () => {
 	const { zoomLevel, setIsZooming } = useDock()
 
@@ -45,8 +43,8 @@ export const DockDivider = () => {
 	}
 
 	return (
-		<div className={styles.divider__container} {...bind()}>
-			<span className={styles.divider}></span>
+		<div className={'h-full flex items-center py-1'} {...bind()}>
+			<span className={'h-full w-[1px] rounded-sm bg-white/10'}></span>
 		</div>
 	)
 }

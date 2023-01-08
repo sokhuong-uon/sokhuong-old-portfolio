@@ -12,7 +12,6 @@ import Link from 'next/link'
 import { useDock } from '../DockContext'
 
 import { useRouter } from 'next/router'
-import styles from './dock-card.module.scss'
 
 type DockCardProps = React.PropsWithChildren & {
 	link: string
@@ -84,42 +83,7 @@ export const DockCard = ({ link, children }: DockCardProps) => {
 		setElCenterX(x + INITIAL_WIDTH / 2)
 	})
 
-	const timesLooped = React.useRef(0)
 	const timeoutRef = React.useRef<NodeJS.Timeout>()
-	const isAnimating = React.useRef(false)
-
-	const handleClick = () => {
-		if (!isAnimating.current) {
-			isAnimating.current = true
-			opacity.start(0.5)
-
-			timesLooped.current = 0
-
-			y.start(-INITIAL_WIDTH / 2, {
-				loop: () => {
-					if (3 === timesLooped.current++) {
-						timeoutRef.current = setTimeout(() => {
-							opacity.start(0)
-							y.set(0)
-							isAnimating.current = false
-							timeoutRef.current = undefined
-						}, 2000)
-						y.stop()
-					}
-					return { reverse: true }
-				}
-			})
-		} else {
-			/**
-			 * Allow premature exit of animation
-			 * on a second click if we're currently animating
-			 */
-			clearTimeout(timeoutRef.current)
-			opacity.start(0)
-			y.start(0)
-			isAnimating.current = false
-		}
-	}
 
 	React.useEffect(() => () => clearTimeout(timeoutRef.current), [])
 
@@ -133,15 +97,15 @@ export const DockCard = ({ link, children }: DockCardProps) => {
 	}, [router])
 
 	return (
-		<Link href={link} className={styles['dock-card-container']}>
+		<Link href={link} className={'flex flex-col items-center gap-1'}>
 			<animated.button
 				ref={cardRef}
-				className={styles['dock-card'] + ''}
-				// onClick={handleClick}
+				className={'rounded-md bg-[#614651] cursor-pointer'}
 				style={{
 					width: size,
 					height: size,
-					y
+					y,
+					transition: 'filter 200ms'
 				}}
 			>
 				{children}

@@ -1,4 +1,4 @@
-import { a } from '@react-spring/web'
+import { a, useTransition } from '@react-spring/web'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRef } from 'react'
@@ -55,25 +55,63 @@ export const Description: React.FC<DescriptionProps> = ({
 		<div className="absolute inset-0 flex flex-col w-full h-full text-white pointer-events-none">
 			<div className="relative w-full pt-32 ">
 				<h3 className="relative w-full h-8 overflow-hidden text-lg font-semibold tracking-wider opacity-40">
-					<a.span className="absolute w-full h-full text-center">
+					{/* <a.span className="absolute w-full h-full text-center">
 						{intro}
-					</a.span>
+					</a.span> */}
+					<AnimatedIntro text={intro} />
 				</h3>
 
 				<h2 className="relative w-full h-12 overflow-hidden text-4xl font-semibold lg:text-5xl">
-					<a.span className="absolute w-full text-center">{skill}</a.span>
+					{/* <a.span className="absolute w-full text-center">{skill}</a.span> */}
+					<AnimatedIntro text={skill} />
 				</h2>
 			</div>
 
 			<div className="absolute w-full bottom-64">
 				<h1 className="relative h-12 overflow-hidden font-normal opacity-50 sm:h-7">
-					<a.span className="absolute w-full h-full text-center">
+					{/* <a.span className="absolute w-full h-full text-center">
 						{description}
-					</a.span>
+					</a.span> */}
+					<AnimatedParagraph text={description}></AnimatedParagraph>
 				</h1>
 			</div>
 		</div>
 	)
+}
+
+function AnimatedParagraph({ text }: { text: string }) {
+	const transitions = useTransition([text], {
+		from: { opacity: 0 },
+		enter: { opacity: 1 },
+		leave: { opacity: 0 },
+		config: {
+			duration: 1000
+		},
+		delay: 1000
+	})
+
+	return transitions((style, item) => (
+		<a.span className={'absolute w-full h-full text-center'} style={style}>
+			{item}
+		</a.span>
+	))
+}
+
+function AnimatedIntro({ text }: { text: string }) {
+	const transitions = useTransition([text], {
+		from: { top: '-100px' },
+		enter: { top: '0' },
+		leave: { top: '100px' },
+		config: {
+			duration: 1000
+		}
+	})
+
+	return transitions((style, item) => (
+		<a.span className={'absolute w-full h-full text-center'} style={style}>
+			{item}
+		</a.span>
+	))
 }
 
 export default Home

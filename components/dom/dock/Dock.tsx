@@ -6,7 +6,6 @@ import { useWindowResize } from './hooks/useWindowResize'
 
 import { DockContext } from './DockContext'
 
-import styles from './dock.module.scss'
 import { DockList } from './DockList'
 
 export const DOCK_ZOOM_LIMIT = [-100, 50]
@@ -36,7 +35,9 @@ export const Dock = () => {
 		<DockContext.Provider value={{ hovered, setIsZooming, width, zoomLevel }}>
 			<animated.div
 				ref={dockRef}
-				className={styles.dock}
+				className={
+					'fixed bottom-3 left-1/2 -translate-x-1/2 items-end flex gap-3 bg-white/5 will-change-contents rounded-sm px-3 h-14 origin-center'
+				}
 				onMouseOver={() => {
 					if (!isZooming.current) {
 						setHovered(true)

@@ -2,8 +2,6 @@ import { Card } from './card/Card'
 import { DockCard } from './card/DockCard'
 import { DockDivider } from './divider/DockDivider'
 
-import styles from './card/card.module.scss'
-
 export const DockList = () => {
 	return (
 		<>
@@ -99,7 +97,7 @@ export const DockList = () => {
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
 						fill="currentColor"
-						className={'w-8 h-8 ' + styles.card__img}
+						className={'w-8 h-8 relative z-0'}
 					>
 						<path
 							fillRule="evenodd"
