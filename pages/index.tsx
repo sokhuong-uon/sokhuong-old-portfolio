@@ -9,17 +9,14 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Sokhuong | Creative Coding</title>
-				<meta
-					name="Description"
-					content="Web Developer. Frontend, WebGL, 3D, Three.js, Animation, React Three Fiber, Blender, React.js, TypeScript."
-				/>
+				<title>Sokhuong</title>
+				<meta name="Description" content="Software Engineer, Web Developer" />
 
 				{/* Open Graph */}
 				<meta property="og:title" content="Sokhuong | Web Dev" />
 				<meta
 					property="og:description"
-					content="React.js | Vue.js | WebGL | Animation"
+					content="Web Developer. Creative coding"
 				/>
 				<meta
 					property="og:image"
