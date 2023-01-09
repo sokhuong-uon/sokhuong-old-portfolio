@@ -13,10 +13,13 @@ const cards = [
 		image: '/experience/backend/nodejs.jpg',
 		link: 'nodejs.org'
 	},
-
 	{
 		image: '/experience/backend/nestjs.jpg',
 		link: 'nestjs.com'
+	},
+	{
+		image: '/experience/backend/rust.jpg',
+		link: 'rust-lang.org'
 	},
 	{
 		image: '/experience/backend/golang.jpg',
