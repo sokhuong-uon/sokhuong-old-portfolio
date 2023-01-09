@@ -10,6 +10,10 @@ const cards = [
 		link: 'greensock.com'
 	},
 	{
+		image: '/experience/animation/theatre.jpg',
+		link: 'theatrejs.com'
+	},
+	{
 		image: '/experience/animation/react-spring.jpg',
 		link: 'react-spring.dev'
 	}

@@ -6,20 +6,20 @@ import { Decks } from '../../components/dom/Decks'
 
 const cards = [
 	{
-		image: '/experience/three/a.png',
-		link: 'sokhuong.vercel.app'
+		image: '/experience/progress.jpg',
+		link: ''
 	},
 	{
-		image: '/experience/three/a.png',
-		link: 'sokhuong.vercel.app'
+		image: '/experience/progress.jpg',
+		link: ''
 	},
 	{
-		image: '/experience/three/a.png',
-		link: 'sokhuong.vercel.app'
+		image: '/experience/progress.jpg',
+		link: ''
 	},
 	{
-		image: '/experience/three/a.png',
-		link: 'sokhuong.vercel.app'
+		image: '/experience/progress.jpg',
+		link: ''
 	}
 ]
 
