@@ -1,4 +1,5 @@
 import { a, to as interpolate, useSprings } from '@react-spring/web'
+import { useCursor } from '@react-three/drei'
 import { useDrag } from '@use-gesture/react'
 import { useState } from 'react'
 
@@ -21,6 +22,8 @@ const trans = (r: number, s: number) =>
 
 function Deck({ cards }: { cards: { image: string; link: string }[] }) {
 	const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
+	const [active, setActive] = useState(false)
+	useCursor(active, 'grabbing')
 
 	const [props, api] = useSprings(cards.length, i => ({
 		...to(i),
@@ -39,6 +42,8 @@ function Deck({ cards }: { cards: { image: string; link: string }[] }) {
 			const trigger = vx > 0.2 // If you flick hard enough it should trigger the card to fly out
 			const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
 			if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+			down && setActive(true)
+			!down && setActive(false)
 
 			api.start(i => {
 				if (index !== i) return // We're only interested in changing spring-data for the current spring

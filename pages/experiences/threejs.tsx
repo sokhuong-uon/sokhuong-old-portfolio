@@ -14,8 +14,8 @@ const cards = [
 		link: ''
 	},
 	{
-		image: '/experience/progress.jpg',
-		link: ''
+		image: '/experience/three/equirect-cubemap.jpg',
+		link: 'equirectangular-cubemap.vercel.app'
 	}
 ]
 
