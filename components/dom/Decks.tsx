@@ -1,7 +1,6 @@
 import { a, to as interpolate, useSprings } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
 import { useState } from 'react'
-import Image from 'next/image'
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i: number) => ({
@@ -20,7 +19,7 @@ const trans = (r: number, s: number) =>
 		r / 10
 	}deg) rotateZ(${r}deg) scale(${s})`
 
-function Deck({ cards }: { cards: string[] }) {
+function Deck({ cards }: { cards: { image: string; link: string }[] }) {
 	const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
 
 	const [props, api] = useSprings(cards.length, i => ({
@@ -83,7 +82,7 @@ function Deck({ cards }: { cards: string[] }) {
 						{...bind(i)}
 						style={{
 							transform: interpolate([rot, scale], trans),
-							backgroundImage: `url(${cards[i]})`,
+							backgroundImage: `url(${cards[i].image})`,
 
 							boxShadow:
 								'0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3)'
@@ -91,10 +90,10 @@ function Deck({ cards }: { cards: string[] }) {
 						className="relative w-full h-full bg-black bg-center bg-no-repeat bg-cover rounded-md touch-none will-change-transform "
 					/>
 					<a
-						href="https://sokhuong.vercel.app"
-						className="absolute w-9/12 text-center text-white/40 drop-shadow-sm bottom-12"
+						href={'https://' + cards[i].link}
+						className="absolute w-9/12 text-center truncate text-white/40 drop-shadow-sm bottom-12"
 					>
-						sokhuong.vercel.app
+						{cards[i].link}
 					</a>
 				</a.div>
 			))}
@@ -102,7 +101,7 @@ function Deck({ cards }: { cards: string[] }) {
 	)
 }
 
-function Decks({ cards }: { cards: string[] }) {
+function Decks({ cards }: { cards: { image: string; link: string }[] }) {
 	return (
 		<div className="h-full fcc touch-none">
 			<Deck cards={cards} />

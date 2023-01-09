@@ -5,10 +5,22 @@ import { useRef } from 'react'
 import { Decks } from '../../components/dom/Decks'
 
 const cards = [
-	'/experience/three/a.png',
-	'/experience/three/a.png',
-	'/experience/three/a.png',
-	'/experience/three/a.png'
+	{
+		image: '/experience/three/a.png',
+		link: 'sokhuong.vercel.app'
+	},
+	{
+		image: '/experience/three/a.png',
+		link: 'sokhuong.vercel.app'
+	},
+	{
+		image: '/experience/three/a.png',
+		link: 'sokhuong.vercel.app'
+	},
+	{
+		image: '/experience/three/a.png',
+		link: 'sokhuong.vercel.app'
+	}
 ]
 
 const ModelingExperience: NextPage = () => {
