@@ -1,7 +1,1 @@
 export * from './MediaLinks'
-export * from './Carousel'
-export * from './HtmlContent'
-export * from './ExperienceSection'
-export * from './ExperienceDetail'
-export * from './ContactSection'
-export * from './IntroductionSection'
