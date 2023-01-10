@@ -34,9 +34,9 @@ const Contact: NextPage = () => {
 
 				<Link
 					href="/acknowledgement"
-					className="absolute flex items-center justify-center w-12 h-12 text-xl text-center text-white rounded-full pointer-events-auto bg-white/20 top-2 right-2"
+					className="absolute flex items-center justify-center w-full h-12 p-2 text-xl text-center text-blue-600 underline rounded-full pointer-events-auto bg-white/20 top-2 right-2"
 				>
-					?
+					Acknowledgement
 				</Link>
 			</section>
 		</>

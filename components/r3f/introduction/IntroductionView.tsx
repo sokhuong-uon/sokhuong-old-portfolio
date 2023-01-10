@@ -1,4 +1,4 @@
-import { ContactShadows, PerspectiveCamera } from '@react-three/drei'
+import { ContactShadows, PerspectiveCamera, Sparkles } from '@react-three/drei'
 import React from 'react'
 import { WobblyBars } from './WobblyBar'
 
@@ -10,6 +10,8 @@ export const IntroductionView: React.FC<IntroductionViewProps> = ({}) => {
 	return (
 		<>
 			<WobblyBars />
+
+			<Sparkles speed={1} scale={4} />
 
 			<pointLight position={[1, -1, 1]} />
 			<directionalLight castShadow position={[2.5, 12, 12]} intensity={0.3} />

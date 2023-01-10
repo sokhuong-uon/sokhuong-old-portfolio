@@ -4,10 +4,6 @@ export const CanvasViews = () => {
 	return (
 		<>
 			<IntroductionView />
-
-			{/* <ExperienceView experienceTrack={experienceTrack} /> */}
-
-			{/* <ContactView contactTrack={contactTrack} /> */}
 		</>
 	)
 }
