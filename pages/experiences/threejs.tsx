@@ -6,16 +6,16 @@ import { Decks } from '../../components/dom/Decks'
 
 const cards = [
 	{
-		image: '/experience/progress.jpg',
-		link: ''
-	},
-	{
-		image: '/experience/progress.jpg',
-		link: ''
-	},
-	{
 		image: '/experience/three/equirect-cubemap.jpg',
 		link: 'equirectangular-cubemap.vercel.app'
+	},
+	{
+		image: '/experience/three/draw.jpg',
+		link: 'editor-hhnx.vercel.app/draw'
+	},
+	{
+		image: '/experience/three/shape.jpg',
+		link: 'editor-hhnx.vercel.app/'
 	}
 ]
 
