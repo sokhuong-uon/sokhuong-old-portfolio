@@ -97,6 +97,8 @@ function Deck({ cards }: { cards: { image: string; link: string }[] }) {
 					<a
 						href={'https://' + cards[i].link}
 						className="absolute w-9/12 text-center truncate text-white/40 drop-shadow-sm bottom-12"
+						target={'_blank'}
+						rel="noreferrer"
 					>
 						{cards[i].link}
 					</a>

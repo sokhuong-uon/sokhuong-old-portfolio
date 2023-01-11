@@ -6,6 +6,10 @@ import { Decks } from '../../components/dom/Decks'
 
 const cards = [
 	{
+		image: '/experience/website/sass.jpg',
+		link: 'sass-lang.com'
+	},
+	{
 		image: '/experience/website/tailwind.jpg',
 		link: 'tailwindcss.com'
 	},
