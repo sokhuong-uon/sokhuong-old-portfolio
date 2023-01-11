@@ -18,8 +18,8 @@ const cards = [
 		link: ''
 	},
 	{
-		image: '/experience/progress.jpg',
-		link: ''
+		image: '/experience/modeling/tuff.jpg',
+		link: 'twitter.com/SOKHUONG3/status/1443839474559946753?s=20&t=n6CuvCu0jszxk4QWLo1HRA'
 	}
 ]
 
