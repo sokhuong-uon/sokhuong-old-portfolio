@@ -6,12 +6,16 @@ import { Decks } from '../../components/dom/Decks'
 
 const cards = [
 	{
-		image: '/experience/three/a.png',
-		link: 'sokhuong.vercel.app'
+		image: '/experience/website/tailwind.jpg',
+		link: 'tailwindcss.com'
 	},
 	{
-		image: '/experience/website/wetype.jpg',
-		link: 'wetype.apps.hunvikran.com'
+		image: '/experience/website/react.jpg',
+		link: 'reactjs.org'
+	},
+	{
+		image: '/experience/website/next.jpg',
+		link: 'nextjs.org'
 	},
 	{
 		image: '/experience/website/wetype.jpg',
