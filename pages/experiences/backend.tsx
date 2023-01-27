@@ -23,7 +23,7 @@ const cards = [
 	// },
 	{
 		image: '/experience/backend/golang.jpg',
-		link: 'go.dev'
+		link: 'github.com/sokhuong-uon/go-vercel-serverless'
 	}
 ]
 
@@ -58,7 +58,7 @@ const BackendExperience: NextPage = () => {
 				<Decks cards={cards} />
 
 				<Description
-					description="With Nest.JS & Golang."
+					description="Deploy REST and GraphQL API"
 					intro="BUILD"
 					skill="BACK-END APP"
 				/>
