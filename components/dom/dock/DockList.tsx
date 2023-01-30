@@ -18,18 +18,6 @@ export const DockList = () => {
 				</Card>
 			</DockCard>
 
-			<DockCard link="/experiences/threejs">
-				<Card>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="currentColor"
-						className="w-6 h-6"
-					>
-						<path d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
-					</svg>
-				</Card>
-			</DockCard>
 			<DockCard link="/experiences/website">
 				<Card>
 					<svg
@@ -42,6 +30,7 @@ export const DockList = () => {
 					</svg>
 				</Card>
 			</DockCard>
+
 			<DockCard link="/experiences/animation">
 				<Card>
 					<svg
@@ -54,7 +43,7 @@ export const DockList = () => {
 					</svg>
 				</Card>
 			</DockCard>
-			<DockCard link="/experiences/modeling">
+			{/* <DockCard link="/experiences/modeling">
 				<Card>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +58,8 @@ export const DockList = () => {
 						/>
 					</svg>
 				</Card>
-			</DockCard>
+			</DockCard> */}
+
 			<DockCard link="/experiences/backend">
 				<Card>
 					<svg
@@ -84,6 +74,19 @@ export const DockList = () => {
 							d="M1.5 10.5a3 3 0 013-3h15a3 3 0 110 6h-15a3 3 0 01-3-3zm15 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm2.25.75a.75.75 0 100-1.5.75.75 0 000 1.5zM4.5 15a3 3 0 100 6h15a3 3 0 100-6h-15zm11.25 3.75a.75.75 0 100-1.5.75.75 0 000 1.5zM19.5 18a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
 							clipRule="evenodd"
 						/>
+					</svg>
+				</Card>
+			</DockCard>
+
+			<DockCard link="/experiences/threejs">
+				<Card>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						className="w-6 h-6"
+					>
+						<path d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
 					</svg>
 				</Card>
 			</DockCard>

@@ -5,25 +5,17 @@ import { useRef } from 'react'
 import { Decks } from '../../components/dom/Decks'
 
 const cards = [
-	// {
-	// 	image: '/experience/backend/python.jpg',
-	// 	link: 'python.org'
-	// },
 	{
-		image: '/experience/backend/nodejs.jpg',
-		link: 'nodejs.org'
+		image: '/experience/backend/golang.jpg',
+		link: 'github.com/sokhuong-uon/go-vercel-serverless'
 	},
 	{
 		image: '/experience/backend/nestjs.jpg',
 		link: 'nestjs.com'
 	},
-	// {
-	// 	image: '/experience/backend/rust.jpg',
-	// 	link: 'rust-lang.org'
-	// },
 	{
-		image: '/experience/backend/golang.jpg',
-		link: 'github.com/sokhuong-uon/go-vercel-serverless'
+		image: '/experience/backend/nodejs.jpg',
+		link: 'nodejs.org'
 	}
 ]
 
