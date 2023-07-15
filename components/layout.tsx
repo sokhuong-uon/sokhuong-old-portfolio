@@ -1,4 +1,4 @@
-import { Poppins } from '@next/font/google'
+import { Poppins } from 'next/font/google'
 import { PropsWithChildren } from 'react'
 import { Dock } from './dom/dock/Dock'
 import { ThreeDContent } from './r3f'
