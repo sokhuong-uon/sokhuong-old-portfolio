@@ -22,11 +22,11 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
 				<ThreeDContent />
 			</figure>
 
-			<main
+			<section
 				className={`${poppins.className} relative w-screen mobile-fit-height pointer-events-none overflow-hidden`}
 			>
 				{children}
-			</main>
+			</section>
 
 			<div className="absolute inset-0 pointer-events-none">
 				<div className="flex flex-col items-center justify-end w-full h-full">

@@ -1,7 +1,8 @@
+import { Resume } from '@components/dom/resume'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-const Resume: NextPage = () => {
+const ResumePage: NextPage = () => {
 	return (
 		<>
 			<Head>
@@ -10,6 +11,8 @@ const Resume: NextPage = () => {
 					name="description"
 					content="Software Engineer, Web Developer Resume"
 				/>
+				<meta name="keywords" content="Sokhuong, Resume, Web Developer" />
+				<meta name="author" content="Sokhuong" />
 
 				{/* Open Graph */}
 				<meta property="og:title" content="Sokhuong | Web Dev" />
@@ -23,11 +26,11 @@ const Resume: NextPage = () => {
 				/>
 			</Head>
 
-			<main className="relative w-full h-full overflow-hidden text-white">
-				<h1>Place resume</h1>
-			</main>
+			<div className="flex justify-center w-full h-full overflow-y-auto pointer-events-auto">
+				<Resume />
+			</div>
 		</>
 	)
 }
 
-export default Resume
+export default ResumePage
