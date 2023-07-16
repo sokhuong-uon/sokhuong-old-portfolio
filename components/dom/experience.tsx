@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useEffect, useRef, useState } from 'react'
 
 export const WorkExperiences = () => {
 	return (
@@ -103,15 +103,43 @@ const Responsibilities = ({
 	responsibilities
 }: {
 	responsibilities: string[]
-}) => (
-	<ul className="flex flex-col gap-2 list-inside print:list-disc">
-		{responsibilities.map((responsibility, index) => (
-			<li
-				key={index}
-				className="p-4 rounded-md shadow-md print:p-0 print:shadow-none bg-white/5 print:bg-transparent"
-			>
-				{responsibility}
-			</li>
-		))}
-	</ul>
-)
+}) => {
+	return (
+		<ul
+			aria-label="Responsibilities and Accomplishment"
+			className="flex flex-col gap-2 overflow-hidden list-inside print:list-disc"
+		>
+			{responsibilities.map((responsibility, index) => (
+				<ResponsibilityItem key={index}>{responsibility}</ResponsibilityItem>
+			))}
+		</ul>
+	)
+}
+
+const ResponsibilityItem = ({ children }: PropsWithChildren<{}>) => {
+	const [isListItemVisible, setListItemVisibility] = useState(false)
+
+	const listItem = useRef<HTMLLIElement>(null)
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(entries => {
+			setListItemVisibility(entries[0].isIntersecting)
+		})
+		listItem.current && observer.observe(listItem.current)
+	}, [])
+
+	return (
+		<li
+			ref={listItem}
+			className={
+				"p-4 rounded-md shadow-md print:p-0 print:shadow-none bg-white/5 print:bg-transparent transition-['transform_opacity'] duration-500" +
+				' ' +
+				(isListItemVisible
+					? 'translate-x-0 opacity-100'
+					: 'translate-x-44 opacity-0 print:opacity-100 print:translate-x-0 motion-reduce:opacity-100 motion-reduce:translate-x-0')
+			}
+		>
+			{children}
+		</li>
+	)
+}
