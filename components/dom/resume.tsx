@@ -92,10 +92,11 @@ const ResumeHeader = () => (
 )
 
 const IntroductionParagraph = () => (
-	<h3 className="max-w-3xl 2xs:text-lg sm:text-xl 2xs:font-light">
-		Hi, I am Sokhuong, experienced in building Optimized Responsive UI with good
-		Accessibility, Animation, and SEO.
-		<br />I could quickly research, analyze, and learn new technologies.
+	<h3 className="max-w-3xl text-gray-400 print:text-gray-900 2xs:text-lg sm:text-lg">
+		Hi, I am Sokhuong, experienced in building <i>Optimized</i> Responsive UI
+		with good <i>Accessibility</i>, Animation, and <i>SEO</i>.
+		<br />I could quickly <i>research</i>, <i>analyze</i>, and{' '}
+		<i>learn new technologies</i>.
 	</h3>
 )
 

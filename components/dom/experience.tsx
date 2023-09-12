@@ -2,11 +2,11 @@ import { PropsWithChildren, useEffect, useRef, useState } from 'react'
 
 export const WorkExperiences = () => {
 	return (
-		<ul id="work-experience-list" className="flex flex-col gap-4 p-4">
+		<ul id="work-experience-list" className="flex flex-col gap-8 p-4">
 			<WorkExperience>
 				<WorkExperienceHeader
 					company="Kirirom Digital Cambodia"
-					date={{ start: 'February 2023' }}
+					date={{ start: 'Feb 2023' }}
 					role="Web Developer"
 				/>
 				<Responsibilities
@@ -21,7 +21,7 @@ export const WorkExperiences = () => {
 						'Improve page performance by optimizing images sizeand use web-friendly image format wherever possible.',
 						'Improve User Experience by using Loading Indicator/Component Skeleton when the data is still loading.',
 						'Setup Git Pre-commit hook with Husky.',
-						'Create reusable components, utilities, and a little bit ofUnit Test.'
+						'Create reusable components, utilities, and a little bit of Unit Test.'
 					]}
 				/>
 			</WorkExperience>
@@ -29,7 +29,7 @@ export const WorkExperiences = () => {
 			<WorkExperience>
 				<WorkExperienceHeader
 					company="Quadusk"
-					date={{ start: 'April 2020', end: 'October 2022' }}
+					date={{ start: 'Apr 2020', end: 'Oct 2022' }}
 					role="Co-Founder & Lead Developer"
 				/>
 				<Responsibilities
@@ -49,7 +49,7 @@ export const WorkExperiences = () => {
 			<WorkExperience>
 				<WorkExperienceHeader
 					company="Zeal VC"
-					date={{ start: 'June 2019', end: 'March 2020' }}
+					date={{ start: 'Jun 2019', end: 'Mar 2020' }}
 					role="Intern"
 				/>
 				<Responsibilities
@@ -84,18 +84,27 @@ export const WorkExperienceHeader = ({
 		end?: string
 	}
 }>) => (
-	<section>
-		<h5 aria-label="Company" className="text-xl font-medium sm:text-2xl">
-			{company}
-		</h5>
+	<section className="flex gap-2">
+		<div className="flex-shrink-0 w-2 bg-blue-300 print:w-1 aspect-square"></div>
 
-		<h6 aria-label="Employment Role" className="text-lg sm:text-xl">
-			{role}
-		</h6>
+		<section>
+			<h5 aria-label="Company" className="text-xl font-medium sm:text-2xl">
+				{company}
+			</h5>
 
-		<p className="flex gap-1" aria-label="Exployment Period">
-			{date.start} - {date.end ?? 'Present'}
-		</p>
+			<div className="flex items-center gap-2 text-sm text-gray-400">
+				<h6 aria-label="Employment Role" className="">
+					{role}
+				</h6>
+				·
+				<p
+					className="flex items-center justify-center gap-1 "
+					aria-label="Exployment Period"
+				>
+					{date.start} - {date.end ?? 'Present'}
+				</p>
+			</div>
+		</section>
 	</section>
 )
 
@@ -132,11 +141,11 @@ const ResponsibilityItem = ({ children }: PropsWithChildren<{}>) => {
 		<li
 			ref={listItem}
 			className={
-				"p-4 rounded-md shadow-md print:p-0 print:shadow-none bg-white/5 print:bg-transparent transition-['transform_opacity'] duration-500" +
+				"p-4 text-gray-400 print:text-gray-800 rounded-md shadow-md print:p-0 print:shadow-none bg-white/5 print:bg-transparent transition-['transform_opacity'] duration-500" +
 				' ' +
 				(isListItemVisible
 					? 'translate-x-0 opacity-100'
-					: 'translate-x-44 opacity-0 print:opacity-100 print:translate-x-0 motion-reduce:opacity-100 motion-reduce:translate-x-0')
+					: 'translate-x-4 opacity-0 print:opacity-100 print:translate-x-0 motion-reduce:opacity-100 motion-reduce:translate-x-0')
 			}
 		>
 			{children}

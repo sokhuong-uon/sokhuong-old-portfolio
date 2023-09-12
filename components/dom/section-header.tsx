@@ -15,6 +15,6 @@ export const SectionHeader = ({
 		)}
 	>
 		{children}
-		{text}
+		<span>{text}</span>
 	</h4>
 )
