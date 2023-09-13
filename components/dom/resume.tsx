@@ -75,7 +75,7 @@ const ResumeHeader = () => (
 					uon sokhuong
 				</h1>
 
-				<h2 className="w-full text-base uppercase md:mb-2 md:mt-auto 2xs:text-xl sm:text-2xl">
+				<h2 className="w-full text-base uppercase text-white/70 print:text-gray-900 md:mb-2 md:mt-auto 2xs:text-xl sm:text-2xl">
 					web developer
 				</h2>
 
@@ -92,12 +92,18 @@ const ResumeHeader = () => (
 )
 
 const IntroductionParagraph = () => (
-	<h3 className="max-w-3xl text-gray-400 print:text-gray-900 2xs:text-lg sm:text-lg">
-		Hi, I am Sokhuong, experienced in building <i>Optimized</i> Responsive UI
-		with good <i>Accessibility</i>, Animation, and <i>SEO</i>.
-		<br />I could quickly <i>research</i>, <i>analyze</i>, and{' '}
-		<i>learn new technologies</i>.
-	</h3>
+	<p className="max-w-3xl text-white/70 print:text-gray-900 2xs:text-lg sm:text-lg">
+		Hi, I am Sokhuong, experienced in building{' '}
+		<i role="presentation">Optimized</i>, Responsive UI with good{' '}
+		<i role="presentation">Accessibility</i>, Animation, and{' '}
+		<i role="presentation" aria-label="S E O">
+			SEO
+		</i>
+		.
+		<br />I could quickly <i role="presentation">research</i>,{' '}
+		<i role="presentation">analyze</i>, and{' '}
+		<i role="presentation">learn new technologies</i>.
+	</p>
 )
 
 const ResumeAddress = () => (

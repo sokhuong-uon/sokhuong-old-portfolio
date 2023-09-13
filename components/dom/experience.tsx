@@ -88,19 +88,21 @@ export const WorkExperienceHeader = ({
 		<div className="flex-shrink-0 w-2 bg-blue-300 print:w-1 aspect-square"></div>
 
 		<section>
-			<h5 aria-label="Company" className="text-xl font-medium sm:text-2xl">
+			<p className="text-xl font-medium sm:text-2xl">
+				<span className="sr-only ">Company:</span>
 				{company}
-			</h5>
+			</p>
 
 			<div className="flex items-center gap-2 text-sm text-gray-400">
-				<h6 aria-label="Employment Role" className="">
+				<p className="">
+					<span className="sr-only ">Employment Role:</span>
 					{role}
-				</h6>
-				·
-				<p
-					className="flex items-center justify-center gap-1 "
-					aria-label="Exployment Period"
-				>
+				</p>
+
+				<span aria-hidden>·</span>
+
+				<p className="flex items-center justify-center gap-1 ">
+					<span className="sr-only ">Employment Period:</span>
 					{date.start} - {date.end ?? 'Present'}
 				</p>
 			</div>
