@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 export const EducationItem = ({
 	university,
 	date,
-	major: role
+	major
 }: PropsWithChildren<{
 	university: string
 	major: string
@@ -24,7 +24,7 @@ export const EducationItem = ({
 			<div className="flex items-center gap-2 text-sm text-gray-400">
 				<p className="">
 					<span className="sr-only ">Major:</span>
-					{role}
+					{major}
 				</p>
 
 				<span aria-hidden>·</span>
