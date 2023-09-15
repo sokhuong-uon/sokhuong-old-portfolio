@@ -89,6 +89,60 @@ export const Resume = () => {
 							</SVGIcon>
 						</SectionHeader>
 					</section>
+
+					{/* language */}
+					<section>
+						<SectionHeader
+							text="Languages"
+							id="language-section-header"
+							className="print:rounded-r-full"
+						>
+							<SVGIcon width={16} height={16}>
+								<path
+									fill="currentColor"
+									fill-rule="evenodd"
+									d="M6.2 3.2a.6.6 0 0 1 .6.6v.6h1.8a.6.6 0 0 1 0 1.2h-.853a11.322 11.322 0 0 1-1.035 2.868c.174.212.358.418.549.616a.6.6 0 1 1-.864.833 12.62 12.62 0 0 1-.333-.36 11.456 11.456 0 0 1-1.864 2.14.6.6 0 0 1-.8-.894 10.253 10.253 0 0 0 1.878-2.24 11.396 11.396 0 0 1-.892-1.496.6.6 0 1 1 1.074-.534c.14.282.293.557.458.823.25-.56.451-1.148.598-1.756H3.8a.6.6 0 1 1 0-1.2h1.8v-.6a.6.6 0 0 1 .6-.6Zm3.6 3.6a.6.6 0 0 1 .536.332l1.795 3.589a.475.475 0 0 1 .012.022l.594 1.188a.6.6 0 0 1-1.074.537l-.433-.868H8.37l-.434.868a.599.599 0 0 1-1.142-.308.6.6 0 0 1 .07-.228l.593-1.188.012-.023 1.794-3.59A.6.6 0 0 1 9.8 6.8Zm-.83 3.6h1.66L9.8 8.742 8.97 10.4Z"
+									clip-rule="evenodd"
+								/>
+							</SVGIcon>
+						</SectionHeader>
+					</section>
+
+					{/* hobbies */}
+					<section>
+						<SectionHeader
+							text="hobbies"
+							id="hobbies-section-header"
+							className="print:rounded-r-full"
+						>
+							<SVGIcon width={16} height={16}>
+								<path
+									fill="currentColor"
+									fill-rule="evenodd"
+									d="M8 12.8a4.8 4.8 0 1 0 0-9.601A4.8 4.8 0 0 0 8 12.8ZM6.2 7.4a.6.6 0 1 0 0-1.2.6.6 0 0 0 0 1.2Zm4.2-.6a.6.6 0 1 1-1.2 0 .6.6 0 0 1 1.2 0Zm-.278 3.321a.599.599 0 1 0-.85-.848 1.8 1.8 0 0 1-2.545 0 .6.6 0 0 0-.849.848 3 3 0 0 0 4.244 0Z"
+									clip-rule="evenodd"
+								/>
+							</SVGIcon>
+						</SectionHeader>
+					</section>
+
+					{/* side project */}
+					<section>
+						<SectionHeader
+							text="side projects"
+							id="side-project-section-header"
+							className="print:rounded-r-full"
+						>
+							<SVGIcon width={16} height={16}>
+								<path
+									fill="currentColor"
+									fill-rule="evenodd"
+									d="M6.2 3.2a.6.6 0 0 0-.424 1.024l.424.424v2.255a.6.6 0 0 1-.176.424l-2.4 2.4C2.49 10.861 3.294 12.8 4.897 12.8h6.206c1.603 0 2.407-1.939 1.273-3.073l-2.4-2.4a.6.6 0 0 1-.176-.424V4.648l.424-.424A.6.6 0 0 0 9.8 3.2H6.2Zm1.2 3.703V4.4h1.2v2.503c0 .477.19.935.527 1.272l.617.617a2.4 2.4 0 0 0-1.303.061l-.282.094a2.4 2.4 0 0 1-1.518 0l-.338-.112a1.18 1.18 0 0 0-.068-.021l.638-.638A1.8 1.8 0 0 0 7.4 6.903Z"
+									clip-rule="evenodd"
+								/>
+							</SVGIcon>
+						</SectionHeader>
+					</section>
 				</section>
 			</main>
 		</article>
