@@ -29,6 +29,7 @@ export const WorkExperiences = () => {
 			<WorkExperience>
 				<WorkExperienceHeader
 					company="Quadusk"
+					companyNamePronunciation="Quad Dusk"
 					date={{ start: 'Apr 2020', end: 'Oct 2022' }}
 					role="Co-Founder & Lead Developer"
 				/>
@@ -75,7 +76,8 @@ export const WorkExperience = ({ children }: PropsWithChildren<{}>) => (
 export const WorkExperienceHeader = ({
 	company,
 	date,
-	role
+	role,
+	companyNamePronunciation
 }: PropsWithChildren<{
 	company: string
 	role: string
@@ -83,6 +85,7 @@ export const WorkExperienceHeader = ({
 		start: string
 		end?: string
 	}
+	companyNamePronunciation?: string
 }>) => (
 	<section className="flex gap-2">
 		<div className="flex-shrink-0 w-2 bg-blue-300 print:w-1 aspect-square"></div>
@@ -90,7 +93,13 @@ export const WorkExperienceHeader = ({
 		<section>
 			<p className="text-xl font-medium sm:text-2xl">
 				<span className="sr-only ">Company:</span>
-				{company}
+				<span>{company}</span>
+				{companyNamePronunciation && (
+					<span className="sr-only">
+						{' '}
+						.Pronounce as {companyNamePronunciation}
+					</span>
+				)}
 			</p>
 
 			<div className="flex items-center gap-2 text-sm text-gray-400">

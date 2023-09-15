@@ -1,15 +1,14 @@
-import { SVGProps } from 'react'
+import { PropsWithChildren, SVGProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 export const SVGIcon = ({
 	width = 12,
 	height = 12,
-	clipRule,
-	fillRule,
-	path,
-	className
-}: Pick<SVGProps<SVGElement>, 'width' | 'height' | 'className'> &
-	Pick<SVGProps<SVGPathElement>, 'path' | 'clipRule' | 'fillRule'>) => (
+	className,
+	children
+}: PropsWithChildren<
+	Pick<SVGProps<SVGElement>, 'width' | 'height' | 'className'>
+>) => (
 	<svg
 		width={width}
 		height={height}
@@ -19,11 +18,6 @@ export const SVGIcon = ({
 			className
 		)}
 	>
-		<path
-			fill="currentColor"
-			fillRule={fillRule}
-			d={path}
-			clipRule={clipRule}
-		/>
+		{children}
 	</svg>
 )
