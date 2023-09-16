@@ -90,27 +90,25 @@ export const WorkExperienceHeader = ({
 	<section className="flex gap-2">
 		<div className="flex-shrink-0 w-2 bg-blue-300 print:w-1 aspect-square"></div>
 
-		<section>
+		<section className="space-y-2">
 			<p className="text-xl font-medium sm:text-2xl">
 				<span className="sr-only ">Company:</span>
 				<span>{company}</span>
 				{companyNamePronunciation && (
 					<span className="sr-only">
 						{' '}
-						.Pronounce as {companyNamePronunciation}
+						. Pronounce as {companyNamePronunciation}
 					</span>
 				)}
 			</p>
 
-			<div className="flex items-center gap-2 text-sm text-gray-400">
+			<div className="flex flex-col gap-1 text-sm text-gray-900 dark:text-gray-400 print:text-black">
 				<p className="">
 					<span className="sr-only ">Employment Role:</span>
 					{role}
 				</p>
 
-				<span aria-hidden>·</span>
-
-				<p className="flex items-center justify-center gap-1 ">
+				<p className="flex items-center gap-1">
 					<span className="sr-only ">Employment Period:</span>
 					{date.start} - {date.end ?? 'Present'}
 				</p>
@@ -127,7 +125,7 @@ const Responsibilities = ({
 	return (
 		<ul
 			aria-label="Responsibilities and Accomplishment"
-			className="flex flex-col gap-2 overflow-hidden list-inside print:list-disc"
+			className="flex flex-col gap-2 pb-2 overflow-hidden list-inside print:list-disc"
 		>
 			{responsibilities.map((responsibility, index) => (
 				<ResponsibilityItem key={index}>{responsibility}</ResponsibilityItem>
@@ -152,7 +150,7 @@ const ResponsibilityItem = ({ children }: PropsWithChildren<{}>) => {
 		<li
 			ref={listItem}
 			className={
-				"p-4 text-gray-400 print:text-gray-800 rounded-md shadow-md print:p-0 print:shadow-none bg-white/5 print:bg-transparent transition-['transform_opacity'] duration-500" +
+				"p-4 dark:text-gray-400 text-gray-800 print:text-gray-800 rounded-md shadow-md print:p-0 print:shadow-none bg-white/5 print:bg-transparent transition-['transform_opacity'] duration-500" +
 				' ' +
 				(isListItemVisible
 					? 'translate-x-0 opacity-100'

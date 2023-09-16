@@ -13,3 +13,9 @@
 body {
 	background-color: black;
 }
+
+@media print {
+	body {
+		background-color: white;
+	}
+}
