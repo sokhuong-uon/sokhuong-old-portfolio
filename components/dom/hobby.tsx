@@ -25,7 +25,7 @@ export const HobbySection = () => {
 				<HobbyItem>Singing</HobbyItem>
 				<HobbyItem>Dancing... Nah! not really</HobbyItem>
 				<HobbyItem>Coding ¯\_(ツ)_/¯</HobbyItem>
-				<SkillItem summary="YouTbue">
+				<SkillItem summary="YouTube">
 					<div className="p-4">
 						What ever it is just put the youtube iframe here.
 					</div>
