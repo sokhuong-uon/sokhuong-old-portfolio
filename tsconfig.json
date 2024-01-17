@@ -5,11 +5,8 @@
       "components": [
         "components"
       ],
-      "@components": [
-        "components"
-      ],
-      "@components/*": [
-        "components/*"
+      "@": [
+        "./"
       ]
     },
     "target": "es5",
